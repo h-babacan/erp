@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MusteriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('anasayfa');
 });
+
+
+Route::get('/musteriler/ekle', [MusteriController::class,'ekle']);
+Route::post('/musteriler/ekleme', [MusteriController::class,'ekleme']);
+
+Route::get('/musteriler/liste', [MusteriController::class,'listele']);
