@@ -1,0 +1,18 @@
+.ürün_card{
+    background: #ffdf7e;
+    width: 100%;
+    height: max-content;
+
+}
+
+.ürün_adi{
+    background: #0c84ff;
+    width: 25%;
+    height: 100%;
+}
+
+.ürün_detay{
+    background: #0c84ff;
+    width: 25%;
+    height: 100%;
+}
