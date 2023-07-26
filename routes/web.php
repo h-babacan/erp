@@ -16,7 +16,7 @@ use App\Http\Controllers\StokController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('');
 });
 
 //musteri
@@ -28,4 +28,6 @@ Route::get('/musteriler/liste', [MusteriController::class,'listele']);
 Route::get('/stok/stok_ekle', [StokController::class,'ekle']);
 Route::post('/stok/stok_ekleme', [StokController::class,'ekleme']);
 Route::get('/stok/stok_liste', [StokController::class,'liste']);
-Route::get('/stok/urun_detay/{id}', [StokController::class,'urun_detay'])->name('urun_detay');
+Route::get('/stok/urun_detay/{idstok}', [StokController::class,'urun_detay'])->name('urun_detay');
+Route::post('/stok/stok_guncelle', [StokController::class,'stok_guncelle']);
+Route::get('/stok/urun_gorunum/{idstok}', [StokController::class,'urun_gorunum'])->name('urun_gorunum');

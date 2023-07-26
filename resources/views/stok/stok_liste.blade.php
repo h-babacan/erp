@@ -57,9 +57,12 @@
                                                 <!--                                                <a href="#" style="background: #343A40 ;
                                                                                                  color:white ; border: #343A40; border-radius: 3px ; padding: 1px";  >Detay</a>
                                                 -->
-                                                <a href="{{route('urun_detay')}}"><button type="button" class="btn btn-block bg-gradient-info"
+                                                <a href="{{route('urun_detay',['idstok'=>$stok->idstok])}}"><button type="button" class="btn btn-block bg-gradient-info"
                                                                                           style="padding: 5px ; width: 50% ; margin-left: 25% "
                                                     >Detay</button></a>
+
+                                                <a href="{{route('urun_gorunum',['idstok'=>$stok->idstok])}}"><button type="button" style="padding: 5px ; width: 50% ; margin-left: 25% ; border-radius: 5px ; background: green "
+                                                    >urun gorunum</button></a>
 
                                             </td>
                                             <!--                                            <td>
