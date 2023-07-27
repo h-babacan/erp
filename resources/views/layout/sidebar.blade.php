@@ -67,11 +67,19 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="{{ url('/musteriler/dataliste') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>DataTable Liste</p>
+                            </a>
+                        </li>
+
 
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
+                        <i class="nav-item fas fa-box" ></i>
                         <p>
                             Stok ve Depo Kontrol
                             <i class="right fas fa-angle-left"></i>
@@ -81,12 +89,14 @@
 
                         <li class="nav-item">
                             <a href="{{ url('/stok/stok_ekle') }}" class="nav-link">
+                                <i class="nav-item fas fa-plus-square text-success" ></i>
                                 <p>Stok Ekle</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{ url('/stok/stok_liste') }}" class="nav-link">
+                                <i class="nav-item fas fa-clipboard-list text-warning" ></i>
                                 <p>Stok Liste</p>
                             </a>
                         </li>

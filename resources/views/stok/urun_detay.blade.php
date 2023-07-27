@@ -107,22 +107,14 @@
                                     </select>
                                 </div>
 
-<!--                                <div class="urun_card" id="urun_card">
-                                    <div class="urun_adi" ><labe>Ürün Adı</labe></div>
-                                    <div class="urun_detay"><labe>ürün detay</labe></div>
-                                    <div><labe>stok miktarı</labe></div>
-                                    <div><labe>tedarikçi</labe></div>
-                                    <div><labe>ürün alış</labe> <labe>ürün satış</labe> <labe>üründen edilen kar</labe></div>
-                                    <div><labe>hangi depoda</labe></div>
-                                    <div><labe>ürün cinsi</labe></div>
-                                    <div><labe>ürün birimi</labe></div>
-                                </div>
--->
+
                             </div>
 
                                 <div class="card-footer">
-                                    <button class="btn btn-success" type="submit">Güncelle</button>
-                                    <a href="{{url('stok/stok_liste')}}" class="btn btn-danger" type="submit">Vazgeç</a>
+                                    <a href="{{url()->previous()}}"><button class="btn btn-success" type="submit">Güncelle</button></a>
+
+                                    <a href="{{url('stok/stok_liste')}}" class="btn btn-warning" type="submit">Vazgeç</a>
+                                    <a href="{{URL::asset('stok/sil')}}/{{$stok['idstok']}}" class="btn btn-danger" type="submit">Sil</a>
                                 </div>
 
                             </form>
@@ -155,13 +147,5 @@
 
 
 @section('js')
-    <script src="{{asset('/plugins/inputmask/jquery.inputmask.min.js')}}"></script>
-    <script>
-        $(function () {
 
-            $('[data-mask]').inputmask();
-
-
-        });
-    </script>
 @endsection

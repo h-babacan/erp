@@ -29,34 +29,34 @@
                                 <div class="card-body">
 
 
-
                                     <div class="form-group">
                                         <label>Ürün Adı </label>
-                                        <input type="text" class="form-control" name="urun_isim" id="urun_isim" required>
+                                        <input type="text" class="form-control" name="urun_isim" id="urun_isim"
+                                               required>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Tedarikçi</label>
-                                        <input type="text" class="form-control" name="tedarikci" id="tedarikci" >
+                                        <input type="text" class="form-control" name="tedarikci" id="tedarikci">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Stok Miktarı</label>
-                                        <input type="text" class="form-control" name="stok_miktari" id="stok_miktari" >
+                                        <input type="text" class="form-control" name="stok_miktari" id="stok_miktari">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Ürün Alış Fiyatı </label>
 
 
-                                        <input type="text" class="form-control"  name="urun_alis" id="urun_alis">
+                                        <input type="text" class="form-control" name="urun_alis" id="urun_alis">
 
                                     </div>
                                     <div class="form-group">
                                         <label>Ürün Satış Fiyatı </label>
 
 
-                                        <input type="text" class="form-control"  name="urun_satis" id="urun_satis">
+                                        <input type="text" class="form-control" name="urun_satis" id="urun_satis">
                                     </div>
                                     <!--
                                 <div class="form-group">
@@ -66,7 +66,8 @@
 -->
                                     <div class="form-group">
                                         <label>Ürün Bilgi </label>
-                                        <textarea class="form-control" rows="3" name="urun_detay" id="urun_detay"></textarea>
+                                        <textarea class="form-control" rows="3" name="urun_detay"
+                                                  id="urun_detay"></textarea>
                                     </div>
 
                                     <div class="form-group">

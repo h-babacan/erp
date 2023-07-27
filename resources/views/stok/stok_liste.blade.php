@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 @endsection
 
+<styl>
+
+</styl>
+
 @section('content')
 
     <div class="content-wrapper">
@@ -31,7 +35,6 @@
                                 <div class="row">
 
 
-
                                 </div>
 
 
@@ -46,7 +49,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php $i=1; ?>
+                                    <?php $i = 1; ?>
                                     @foreach($liste as $stok )
                                         <tr>
                                             <td>{{$i}}</td>
@@ -57,46 +60,58 @@
                                                 <!--                                                <a href="#" style="background: #343A40 ;
                                                                                                  color:white ; border: #343A40; border-radius: 3px ; padding: 1px";  >Detay</a>
                                                 -->
-                                                <a href="{{route('urun_detay',['idstok'=>$stok->idstok])}}"><button type="button" class="btn btn-block bg-gradient-info"
-                                                                                          style="padding: 5px ; width: 50% ; margin-left: 25% "
-                                                    >Detay</button></a>
+                                                <!--  <div>-->
+                                                    <a href="{{route('urun_detay',['idstok'=>$stok->idstok])}}">
+                                                        <button type="button" class="btn btn-block bg-gradient-info"
+                                                                style="padding: 1px ; width: 40% ;margin-left: 25%; "
+                                                        >Düzenle
+                                                        </button>
+                                                    </a>
 
-                                                <a href="{{route('urun_gorunum',['idstok'=>$stok->idstok])}}"><button type="button" style="padding: 5px ; width: 50% ; margin-left: 25% ; border-radius: 5px ; background: green "
-                                                    >urun gorunum</button></a>
-
+                                                    <a href="{{route('urun_gorunum',['idstok'=>$stok->idstok])}}">
+                                                        <button type="button" class="btn btn-block btn-warning btn-sm"
+                                                                style="padding: 1px ; width: 40% ; margin-left: 25% ; border-radius: 5px"
+                                                        >urun gorunum
+                                                        </button>
+                                                    </a>
+                                                <!-- </div>-->
                                             </td>
                                             <!--                                            <td>
                                                 @if($stok->musteri_tipi=='0')
                                                 Bireysel Müşteri
-@endif
+
+                                            @endif
 
                                             @if($stok->musteri_tipi=='1')
                                                 Kurumsal Müşteri
-@endif
+
+                                            @endif
 
                                             @if($stok->musteri_tipi=='2')
                                                 Filo Müşterisi
-@endif
+
+                                            @endif
                                             </td>
 
                                             <td>
                                                 @if($stok->durum=='0')
                                                 <span class="badge bg-danger">pasif</span>
-@endif
+
+                                            @endif
 
                                             @if($stok->durum=='1')
                                                 <span class="badge bg-success">Aktif</span>
-@endif
+
+                                            @endif
 
                                             </td>
     -->
                                         </tr>
-                                            <?php $i=$i+1; ?>
+                                            <?php $i = $i + 1; ?>
                                     @endforeach
 
                                     </tbody>
                                 </table>
-
 
 
                             </div>
@@ -114,3 +129,4 @@
         <!-- /.content -->
     </div>
 @endsection
+
