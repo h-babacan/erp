@@ -2,7 +2,7 @@
 
 
 @section('css')
-
+    <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 @endsection
 
 @section('content')
@@ -33,22 +33,7 @@
                             <div class="card-body">
 
                                 <input type="hidden" value="{{$stok->idstok}}" name="idstok" id="idstok">
-                                @if(session()->get('durum')=='1')
-                                    <div class="alert alert-success alert-dismissible">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 
-                                        {{session()->get('mesaj')}}
-                                    </div>
-                                @endif
-
-
-                                @if(session()->get('durum')=='0')
-                                    <div class="alert alert-danger alert-dismissible">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-
-                                        {{session()->get('mesaj')}}
-                                    </div>
-                                @endif
 
                                 <div class="form-group">
                                     <labe>Urun isim</labe>
@@ -84,8 +69,8 @@
                                     <labe>hangi depoda</labe>
                                     <select class="form-control" name="hangi_depo" id="hangi_depo">
                                         <option @if($stok->hangi_depo=="1") selected @endif value="1">Ana depo</option>
-                                        <option @if($stok->hangi_depo=='2') selected @endif value="2">2</option>
-                                        <option @if($stok->hangi_depo=='3') selected @endif value="3">3</option>
+                                        <option @if($stok->hangi_depo=='2') selected @endif value="2">2. Depo</option>
+                                        <option @if($stok->hangi_depo=='3') selected @endif value="3">3. Depo</option>
                                     </select>
                                 </div>
 
@@ -147,5 +132,21 @@
 
 
 @section('js')
-
+    <script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+<script>
+    Swal.fire({
+        title: 'Do you want to save the changes?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+        denyButtonText: `Don't save`,
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            Swal.fire('Saved!', '', 'success')
+        } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')
+        }
+    })
+</script>
 @endsection

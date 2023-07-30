@@ -7,7 +7,7 @@ use App\Http\Controllers\StokController;
 
 
 Route::get('/', function () {
-    return view('');
+    return view('anasayfa');
 });
 
 //musteri

@@ -8,6 +8,7 @@
             height: 35px;
             line-height: 35px;
             padding-right: .75rem;
+
         }
 
         .color-palette.disabled {
@@ -76,7 +77,6 @@
                                         </div>
                                         <div class="bg-primary disabled color-palette" style="height: fit-content">
                                             <ul>
-                                                <li>ÜRÜN DETAYI</li>
                                                 <li>STOK MİKTARI</li>
                                                 <li>TEDARİKÇİ</li>
                                                 <li>ÜRÜN ALIŞ FİYATI</li>
@@ -84,6 +84,7 @@
                                                 <li>ÜRÜNÜN BULUNDUĞU DEPO</li>
                                                 <li>ÜRÜN BİRİMİ</li>
                                                 <li>ÜRÜNÜN CİNSİ</li>
+                                                <li>ÜRÜN DETAYI</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -94,13 +95,31 @@
                                         </div>
                                         <div class="bg-primary disabled color-palette" style="height: fit-content">
                                             <ul>
-                                                <li>{{$stok['urun_detay']}}</li>
                                                 <li>{{$stok['stok_miktari']}}</li>
                                                 <li>{{$stok['tedarikci']}}</li>
                                                 <li>{{$stok['urun_alis']}}</li>
                                                 <li>{{$stok['urun_satis']}}</li>
-                                                <li>{{$stok['hangi_depoda']}}</li>
-                                                <li>{{$stok['urun_birimi']}}</li>
+
+                                                <li>
+                                                    @if($stok['hangi_depoda']==1)
+                                                        Ana Depo
+                                                    @elseif($stok['hangi_depoda']==2)
+                                                        2. Depo
+                                                    @else
+                                                        3. Depo
+                                                    @endif
+                                                </li>
+
+                                                <li>
+                                                    @if($stok['urun_birimi']==1)
+                                                        Adet
+                                                    @elseif($stok['urun_birimi']==2)
+                                                        KG
+                                                    @else
+                                                        Litre
+                                                    @endif
+                                                </li>
+
                                                 <li>
                                                     @if($stok['urun_cinsi']==1)
                                                         Elektronik
@@ -110,6 +129,7 @@
                                                         Bakliyat
                                                     @endif
                                                 </li>
+                                                <li>{{$stok['urun_detay']}}</li>
                                             </ul>
                                         </div>
                                     </div>

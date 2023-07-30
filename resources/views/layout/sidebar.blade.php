@@ -13,7 +13,7 @@
                 <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">Hüseyin BABACAN</a>
             </div>
         </div>
 
@@ -36,7 +36,7 @@
                      with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                    <a href="{{ url('/') }}" class="nav-link active">
+                    <a href="{{ url('/') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Anasayfa
@@ -81,7 +81,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-item fas fa-box" ></i>
                         <p>
-                            Stok ve Depo Kontrol
+                            Stok Kontrol
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>

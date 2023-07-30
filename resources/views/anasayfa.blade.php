@@ -18,7 +18,7 @@
                         <!-- Default box -->
                         <div class="card ">
                             <div class="card-header">
-                                <h3 class="card-title">Title</h3>
+                                <h3 class="card-title">Hüseyin BABACAN</h3>
 
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -30,18 +30,12 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="row">sdgsdg</div>
-                                <div class="row">sdgsdg</div>
-                                <div class="row">sdgsdg</div>
-                                <div class="row">sdgsdg</div>
-                                <div class="row">sdgsdg</div>
-                                <div class="row">sdgsdg</div>
-                                <div class="row">sdgsdg</div>
+                                <div class="row"><h1>Sunumuma Hoş Geldiniz</h1></div>
 
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Footer
+
                             </div>
                             <!-- /.card-footer-->
                         </div>

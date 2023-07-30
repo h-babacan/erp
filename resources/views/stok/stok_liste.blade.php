@@ -57,55 +57,23 @@
                                             <td>{{$stok->stok_miktari}}</td>
                                             <td>{{$stok->tedarikci}}</td>
                                             <td>
-                                                <!--                                                <a href="#" style="background: #343A40 ;
-                                                                                                 color:white ; border: #343A40; border-radius: 3px ; padding: 1px";  >Detay</a>
-                                                -->
-                                                <!--  <div>-->
-                                                    <a href="{{route('urun_detay',['idstok'=>$stok->idstok])}}">
-                                                        <button type="button" class="btn btn-block bg-gradient-info"
-                                                                style="padding: 1px ; width: 40% ;margin-left: 25%; "
-                                                        >Düzenle
-                                                        </button>
-                                                    </a>
 
-                                                    <a href="{{route('urun_gorunum',['idstok'=>$stok->idstok])}}">
-                                                        <button type="button" class="btn btn-block btn-warning btn-sm"
-                                                                style="padding: 1px ; width: 40% ; margin-left: 25% ; border-radius: 5px"
-                                                        >urun gorunum
-                                                        </button>
-                                                    </a>
-                                                <!-- </div>-->
-                                            </td>
-                                            <!--                                            <td>
-                                                @if($stok->musteri_tipi=='0')
-                                                Bireysel Müşteri
+                                                <a href="{{route('urun_detay',['idstok'=>$stok->idstok])}}">
+                                                    <button type="button" class="btn btn-block bg-gradient-info"
+                                                            style="padding: 1px ; width: 40% ;margin-left: 25%; "
+                                                    >Düzenle
+                                                    </button>
+                                                </a>
 
-                                            @endif
-
-                                            @if($stok->musteri_tipi=='1')
-                                                Kurumsal Müşteri
-
-                                            @endif
-
-                                            @if($stok->musteri_tipi=='2')
-                                                Filo Müşterisi
-
-                                            @endif
-                                            </td>
-
-                                            <td>
-                                                @if($stok->durum=='0')
-                                                <span class="badge bg-danger">pasif</span>
-
-                                            @endif
-
-                                            @if($stok->durum=='1')
-                                                <span class="badge bg-success">Aktif</span>
-
-                                            @endif
+                                                <a href="{{route('urun_gorunum',['idstok'=>$stok->idstok])}}">
+                                                    <button type="button" class="btn btn-block btn-warning btn-sm"
+                                                            style="padding: 1px ; width: 40% ; margin-left: 25% ; border-radius: 5px"
+                                                    >urun gorunum
+                                                    </button>
+                                                </a>
 
                                             </td>
-    -->
+
                                         </tr>
                                             <?php $i = $i + 1; ?>
                                     @endforeach
@@ -129,4 +97,5 @@
         <!-- /.content -->
     </div>
 @endsection
+
 

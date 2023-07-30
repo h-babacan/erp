@@ -96,8 +96,8 @@
                                         <label>Hangi Depo </label>
                                         <select class="form-control" name="hangi_depoda" id="hangi_depoda">
                                             <option value="1">Ana Depo</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
+                                            <option value="2">2.Depo</option>
+                                            <option value="3">3.Depo</option>
 
                                         </select>
 
