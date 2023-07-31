@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MusteriController;
+use App\Http\Controllers\AlinacakUrunlerController;
+use App\Http\Controllers\SiparisalController;
+use App\Http\Controllers\TedarikciController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('anasayfa');
 });
+
+
+Route::get('/musteriler/ekle', [MusteriController::class,'ekle']);
+Route::post('/musteriler/ekleme', [MusteriController::class,'ekleme']);
+Route::get('/musteriler/liste', [MusteriController::class,'listele']);
+Route::get('/musteriler/dataliste', [MusteriController::class,'dataliste']);
+Route::post('musteriler/listeyigetir',[MusteriController::class,'listeyigetir']);
+Route::get('/musteriler/duzenle/{id}', [MusteriController::class,'duzenle']);
+Route::post('/musteriler/guncelleme', [MusteriController::class,'guncelleme']);
+Route::get('/musteriler/sil/{id}', [MusteriController::class,'silme']);
+Route::post('/musteriler/listedata', [MusteriController::class,'listedata']);
+
+Route::get('/alinacakurunler/ekle', [AlinacakUrunlerController::class,'ekle']);
+
+Route::get('/siparisal/ekle', [SiparisalController::class,'ekle']);
+Route::get('/siparisal/liste', [SiparisalController::class,'liste']);
+
+Route::get('/tedarikci/ekle', [TedarikciController::class,'ekle']);
+Route::post('/tedarikci/ekleme', [TedarikciController::class,'ekleme']);
+Route::post('/tedarikci/dataliste', [TedarikciController::class,'dataliste']);
+Route::post('tedarikci/listeyigetir',[TedarikciController::class,'listeyigetir']);
+Route::get('/tedarikci/duzenle/{id}', [TedarikciController::class,'duzenle']);
+Route::post('/tedarikci/guncelleme', [TedarikciController::class,'guncelleme']);
+Route::get('/tedarikci/sil/{id}', [TedarikciController::class,'silme']);
