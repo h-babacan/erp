@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tedarikciler;
 use Yajra\DataTables\Facades\DataTables;
+use Validator;
 
 class TedarikciController extends Controller
 {
@@ -15,11 +16,27 @@ class TedarikciController extends Controller
     public function ekleme(Request $request)
     {
 
+        $rules = array(
+            'tedarikci_adsoyad'  => 'required',
+            'tedarikci_tip'      => 'required',
+            'telefon' => 'required|numeric',
+        );
+        $messages=array(
+            'tedarikci_adsoyad.required' => 'Lütfen tedarikçinin ismini giriniz.',
+            'tedarikci_adsoyad.unique' => 'Tedarikçi ismi zaten kayıtlı!',
+            'telefon.unique' => 'Bu telefon numarası başka bir tedarikçiye aittir.',
+
+        );
+        $validator=Validator::make($request->all(),$rules,$messages);
+        if($validator->fails())
+        {
+            $messages=$validator->messages();
+            return response()->json(["messages"=>$messages], 500);
+        }
+
         $getir = Tedarikciler::where('telefon', $request->telefon)->first();
         if ($getir) {
             return redirect()->back()->with([
-                'mesaj' => 'Bu telefon numarası başka bir tedarikçiye aittir.',
-                'durum' => '0',
             ]);
         } else {
             $yeni_tedarikci = new Tedarikciler();
