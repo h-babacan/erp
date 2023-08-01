@@ -20,7 +20,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">{{$title}}</h3>
+                                <h3 class="card-title">Eksik Ürünler Listesi</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -45,12 +45,16 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th>İşlemler</th>
 
-                                        <th>Müşteri ad soyad</th>
-                                        <th>Telefon</th>
-                                        <th>Müşteri Tipi</th>
-                                        <th>Durum</th>
+
+                                        <th>Ürün Adı</th>
+                                        <th>Ürün Kodu</th>
+                                        <th>Ürün Tipi</th>
+                                        <th>Maks Stok</th>
+                                        <th>Depodaki Miktar</th>
+                                        <th>Min Stok</th>
+                                        <th>Birim Fiyat</th>
+                                        <th>İşlemler</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -114,19 +118,23 @@
                 "ajax": {
                     type:'POST',
                     headers: {'X-CSRF-TOKEN': '{{csrf_token()}}'},
-                    url: '{{url('musteriler/listeyigetir')}}',
+                    url: '{{url('alinacakurunler/listeyigetir')}}',
                     data: function (d) {
                         d.startDate = $('#datepicker_from').val();
                         d.endDate = $('#datepicker_to').val();
                     }
                 },
                 "columns": [
-                    { data: 'butonlar', name: 'butonlar', orderable: false, searchable: false },
 
-                    { data: 'musteri_adsoyad', name: 'musteri_adsoyad'},
-                    { data: 'telefon', name: 'telefon'},
-                    { data: 'musteri_tipi', name: 'musteri_tipi'},
-                    { data: 'durum', name: 'durum'}
+
+                    { data: 'urun_adi', name: 'urun_adi'},
+                    { data: 'urun_kodu', name: 'urun_kodu'},
+                    { data: 'urun_tipi', name: 'urun_tipi'},
+                    { data: 'maks_stok', name: 'maks_stok'},
+                    { data: 'depo_miktar', name: 'depo_miktar'},
+                    { data: 'min_stok', name: 'min_stok'},
+                    { data: 'birim_fiyat', name: 'birim_fiyat'},
+                    { data: 'butonlar', name: 'butonlar', orderable: false, searchable: false }
                 ]
 
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
@@ -145,7 +153,7 @@
     </script>
 
     <script>
-        function sil(url) {
+        function satinal(url) {
             Swal.fire({
                 title: 'Emin misiniz?',
                 text: "Bu işlemi gerçekleştirmek istediğinizden emin misiniz?",

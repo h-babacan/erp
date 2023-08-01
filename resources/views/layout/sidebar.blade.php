@@ -92,25 +92,20 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url('/siparisal/ekle') }}" class="nav-link">
+                                    <a href="{{ url('/deneme1') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Sipariş Al</p>
+                                        <p>Deneme1</p>
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{{ url('/siparisal/liste') }}" class="nav-link">
+                                    <a href="{{ url('/deneme2') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Sipariş Listesi</p>
+                                        <p>DENEME 2</p>
                                     </a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="{{ url('/alinacakurunler/ekle') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Eksik Ürünler Listesi</p>
-                                    </a>
-                                </li>
+
                             </ul>
                     </ul>
                     <ul class="nav nav-treeview">
@@ -130,7 +125,12 @@
                                         <p>Tedarikçi Ekle ve Listele</p>
                                     </a>
                                 </li>
-                                
+                                <li class="nav-item">
+                                    <a href="{{ url('/alinacakurunler/ekle') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Eksik Ürünler Listesi</p>
+                                    </a>
+                                </li>
 
 
                             </ul>

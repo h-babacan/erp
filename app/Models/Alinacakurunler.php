@@ -9,10 +9,13 @@ class Alinacakurunler extends Model
 {
     use HasFactory;
 
-
-    protected $table ='Alinacakurunler';
-
+    protected $table ='alinacakurunler';
+    protected $primarykey ='id';
 
 
     protected $guarded=[];
+
+
+
+
 }

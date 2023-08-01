@@ -30,11 +30,11 @@ class MusteriController extends Controller
             $sonuc = $yeni_musteri->save();
 
             if ($sonuc) {
-//                return redirect('/musteriler/liste')->back()->with([
-//                    'mesaj' => 'Kayıt eklendi.',
-//                    'durum' => '1',]);
-                return redirect('/musteriler/dataliste
-                ');
+              return redirect('/musteriler/dataliste')->with([
+                  'mesaj' => 'Kayıt eklendi.',
+                    'durum' => '1',]);
+//                return redirect('/musteriler/dataliste
+//                ');
 
 
             } else {
@@ -62,7 +62,7 @@ class MusteriController extends Controller
             ->addColumn('butonlar', function ($tablo) {
                 return
                     '<a href="' . url('musteriler/duzenle', ['id' => $tablo->id]) . '" class="btn btn-sm btn-success">Düzenle</a>' .
-                    '<a class="btn btn-sm btn-danger ml-1" href="' . url('musteriler/sil', ['id' => $tablo->id]) . '">Sil</a>';
+                    '<a class="btn btn-sm btn-danger ml-1"  onclick=" sil(\'' . url('musteriler/sil', ['id' => $tablo->id]) . '\')">Sil</a>';
             })
             ->rawColumns(['butonlar'])
             ->make(true);

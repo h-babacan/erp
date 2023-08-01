@@ -5,6 +5,8 @@ use App\Http\Controllers\MusteriController;
 use App\Http\Controllers\AlinacakUrunlerController;
 use App\Http\Controllers\SiparisalController;
 use App\Http\Controllers\TedarikciController;
+use App\Http\Controllers\SatinalController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +35,11 @@ Route::get('/musteriler/sil/{id}', [MusteriController::class,'silme']);
 Route::post('/musteriler/listedata', [MusteriController::class,'listedata']);
 
 Route::get('/alinacakurunler/ekle', [AlinacakUrunlerController::class,'ekle']);
+Route::post('alinacakurunler/listeyigetir',[AlinacakUrunlerController::class,'listeyigetir']);
+Route::get('/alinacakurunler/duzenle/{id}', [AlinacakUrunlerController::class,'duzenle']);
+Route::post('/alinacakurunler/guncelleme', [AlinacakUrunlerController::class,'guncelleme']);
 
-Route::get('/siparisal/ekle', [SiparisalController::class,'ekle']);
-Route::get('/siparisal/liste', [SiparisalController::class,'liste']);
+
 
 Route::get('/tedarikci/ekle', [TedarikciController::class,'ekle']);
 Route::post('/tedarikci/ekleme', [TedarikciController::class,'ekleme']);
