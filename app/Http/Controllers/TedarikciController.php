@@ -15,23 +15,23 @@ class TedarikciController extends Controller
     }
     public function ekleme(Request $request)
     {
-        $rules = array(
-            'tedarikci_adsoyad'  => 'required',
-            'tedarikci_tip'      => 'required',
-            'telefon' => 'required|numeric',
-        );
-        $messages=array(
-            'tedarikci_adsoyad.required' => 'Lütfen tedarikçinin ismini giriniz.',
-            'tedarikci_adsoyad.unique' => 'Tedarikçi ismi zaten kayıtlı!',
-            'telefon.unique' => 'Bu telefon numarası başka bir tedarikçiye aittir.',
-
-        );
-        $validator=Validator::make($request->all(),$rules,$messages);
-        if($validator->fails())
-        {
-            $messages=$validator->messages();
-            return response()->json(["messages"=>$messages], 500);
-        }
+//        $rules = array(
+//            'tedarikci_adsoyad'  => 'required',
+//            'telefon' => 'required',
+//
+//        );
+//        $messages=array(
+//            'tedarikci_adsoyad.required' => 'Lütfen tedarikçinin ismini giriniz.',
+//            'tedarikci_adsoyad.unique' => 'Tedarikçi ismi zaten kayıtlı!',
+//            'telefon.unique' => 'Bu telefon numarası başka bir tedarikçiye aittir.',
+//
+//        );
+//        $validator=Validator::make($request->all(),$rules,$messages);
+//        if($validator->fails())
+//        {
+//            $messages=$validator->messages();
+//            return response()->json(["messages"=>$messages], 500);
+//        }
 
         $getir = Tedarikciler::where('telefon', $request->telefon)->first();
         if ($getir) {
@@ -131,7 +131,7 @@ class TedarikciController extends Controller
 
         $sonuc = $tedarikci->save();
         if ($sonuc) {
-            return redirect()->back()->with([
+            return redirect('/tedarikci/ekle')->with([
                 'mesaj' => 'Kayıt Güncellendi.',
                 'durum' => '1',
             ]);

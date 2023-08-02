@@ -24,7 +24,7 @@
                                     <!-- sağ üste buton ekleme -->
                                 </div>
                             </div>
-                            <form action="{{url('alinacakurunler/satinal')}}" method="post">
+                            <form action="{{url('/satinal/ekleme')}}" method="post">
 
                                 {{ csrf_field() }}
                                 <div class="card-body">

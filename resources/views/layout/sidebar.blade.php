@@ -131,6 +131,12 @@
                                         <p>Eksik Ürünler Listesi</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('/alinacakurunler/satinal') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Satın Alınan Ürünler</p>
+                                    </a>
+                                </li>
 
 
                             </ul>

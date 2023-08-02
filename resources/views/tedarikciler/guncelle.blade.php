@@ -60,11 +60,11 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Müşteri tipi <span style="color: red;">(*)</span></label>
-                                        <select class="form-control" name="musteri_tipi" id="musteri_tipi" required>
-                                            <option @if($tedarikci->tedarikci_tipi=='0') selected @endif value="0">Bireysel Müşteri</option>
-                                            <option @if($tedarikci->tedarikci_tipi=='1') selected @endif value="1">Kurumsal Müşteri</option>
-                                            <option @if($tedarikci->tedarikci_tipi=='2') selected @endif value="2">Filo Müşterisi</option>
+                                        <label>Tedarikçi tipi <span style="color: red;">(*)</span></label>
+                                        <select class="form-control" name="tedarikci_tipi" id="tedarikci_tipi" required>
+                                            <option @if($tedarikci->tedarikci_tipi=='0') selected @endif value="Doğrudan Tedarik">Doğrudan Tedarik</option>
+                                            <option @if($tedarikci->tedarikci_tipi=='1') selected @endif value="Dolaylı Tedarik">Dolaylı Tedarik</option>
+                                            <option @if($tedarikci->tedarikci_tipi=='2') selected @endif value="Mal Tedariği ve Hizmet Alımı">Mal Tedariği ve Hizmet Alımı</option>
 
                                         </select>
 
@@ -74,7 +74,7 @@
                                 <!-- /.card-body -->
                                 <div class="card-footer">
                                     <button class="btn btn-success" type="submit">Güncelle</button>
-                                    <a href="{{url('tedarikci/dataliste')}}" class="btn btn-danger" type="submit">Vazgeç</a>
+                                    <a href="{{url('tedarikci/ekle')}}" class="btn btn-danger" type="submit">Vazgeç</a>
                                 </div>
                                 <!-- /.card-footer-->
                             </form>

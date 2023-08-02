@@ -127,6 +127,7 @@
                     { data: 'telefon', name: 'telefon'},
                     { data: 'musteri_tipi', name: 'musteri_tipi'},
                     { data: 'durum', name: 'durum'}
+
                 ]
 
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');

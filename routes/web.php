@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MusteriController;
 use App\Http\Controllers\AlinacakUrunlerController;
@@ -39,7 +40,7 @@ Route::post('alinacakurunler/listeyigetir',[AlinacakUrunlerController::class,'li
 Route::get('/alinacakurunler/duzenle/{id}', [AlinacakUrunlerController::class,'duzenle']);
 Route::post('/alinacakurunler/guncelleme', [AlinacakUrunlerController::class,'guncelleme']);
 
-Route::post('/alinacakurunler/satinal',[SatinalController::class,'ekle']);
+Route::get('/alinacakurunler/satinal',[SatinalController::class,'ekle']);
 Route::post('/satinal/ekleme', [SatinalController::class,'ekleme']);
 Route::post('satinal/listeyigetir',[SatinalController::class,'listeyigetir']);
 Route::get('/satinal/dataliste', [SatinalController::class,'dataliste']);
@@ -53,3 +54,8 @@ Route::post('tedarikci/listeyigetir',[TedarikciController::class,'listeyigetir']
 Route::get('/tedarikci/duzenle/{id}', [TedarikciController::class,'duzenle']);
 Route::post('/tedarikci/guncelleme', [TedarikciController::class,'guncelleme']);
 Route::get('/tedarikci/sil/{id}', [TedarikciController::class,'silme']);
+
+
+
+
+Route::get('/pdf', [PdfController::class,'document']);
