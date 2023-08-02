@@ -39,6 +39,11 @@ Route::post('alinacakurunler/listeyigetir',[AlinacakUrunlerController::class,'li
 Route::get('/alinacakurunler/duzenle/{id}', [AlinacakUrunlerController::class,'duzenle']);
 Route::post('/alinacakurunler/guncelleme', [AlinacakUrunlerController::class,'guncelleme']);
 
+Route::post('/alinacakurunler/satinal',[SatinalController::class,'ekle']);
+Route::post('/satinal/ekleme', [SatinalController::class,'ekleme']);
+Route::post('satinal/listeyigetir',[SatinalController::class,'listeyigetir']);
+Route::get('/satinal/dataliste', [SatinalController::class,'dataliste']);
+
 
 
 Route::get('/tedarikci/ekle', [TedarikciController::class,'ekle']);

@@ -94,7 +94,7 @@
                                 <li class="nav-item">
                                     <a href="{{ url('/deneme1') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Deneme1</p>
+                                        <p>Satın Alınan</p>
                                     </a>
                                 </li>
 
@@ -129,6 +129,13 @@
                                     <a href="{{ url('/alinacakurunler/ekle') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Eksik Ürünler Listesi</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{ url('/alinacakurunler/satinal') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Satın Alınan Ürünler Listesi</p>
                                     </a>
                                 </li>
 
