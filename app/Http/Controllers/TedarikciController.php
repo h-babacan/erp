@@ -15,7 +15,6 @@ class TedarikciController extends Controller
     }
     public function ekleme(Request $request)
     {
-
         $rules = array(
             'tedarikci_adsoyad'  => 'required',
             'tedarikci_tip'      => 'required',
