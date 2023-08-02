@@ -24,7 +24,7 @@
                                     <!-- sağ üste buton ekleme -->
                                 </div>
                             </div>
-                            <form action="{{url('alinacakurunler/siparisekle')}}" method="post">
+                            <form action="{{url('alinacakurunler/satinal')}}" method="post">
 
                                 {{ csrf_field() }}
                                 <div class="card-body">
@@ -92,7 +92,7 @@
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">
-                                    <button class="btn btn-success" type="submit">Güncelle</button>
+                                    <button class="btn btn-success" type="submit">Satın Al</button>
                                     <a href="{{url('alinacakurunler/ekle')}}" class="btn btn-danger" type="submit">Vazgeç</a>
                                 </div>
                                 <!-- /.card-footer-->

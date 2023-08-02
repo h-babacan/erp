@@ -15,7 +15,6 @@ class TedarikciController extends Controller
     }
     public function ekleme(Request $request)
     {
-
         $rules = array(
             'tedarikci_adsoyad'  => 'required',
             'tedarikci_tip'      => 'required',
@@ -37,6 +36,8 @@ class TedarikciController extends Controller
         $getir = Tedarikciler::where('telefon', $request->telefon)->first();
         if ($getir) {
             return redirect()->back()->with([
+                'mesaj' => 'Bu telefon numarası başka bir tedarikçiye aittir.',
+                'durum' => '0',
             ]);
         } else {
             $yeni_tedarikci = new Tedarikciler();

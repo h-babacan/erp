@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Alinacakurunler;
+use App\Models\Satinal;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -105,7 +106,7 @@ class AlinacakUrunlerController extends Controller
         $urun->min_stok = $request->min_stok;
         $urun->birim_fiyat = $request->birim_fiyat;
 
-        $sonuc = $urun->submit();
+        $sonuc = $urun->save();
         if ($sonuc) {
             return redirect('alinacakurunler/siparisekle')->with([
                 'mesaj' => 'Kayıt Güncellendi.',
