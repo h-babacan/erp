@@ -92,20 +92,25 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url('/deneme1') }}" class="nav-link">
+                                    <a href="{{ url('/siparisal/ekle') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Deneme1</p>
+                                        <p>Sipariş Al</p>
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{{ url('/deneme2') }}" class="nav-link">
+                                    <a href="{{ url('/siparisal/liste') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>DENEME 2</p>
+                                        <p>Sipariş Listesi</p>
                                     </a>
                                 </li>
 
-
+                                <li class="nav-item">
+                                    <a href="{{ url('/alinacakurunler/ekle') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Eksik Ürünler Listesi</p>
+                                    </a>
+                                </li>
                             </ul>
                     </ul>
                     <ul class="nav nav-treeview">
@@ -125,12 +130,7 @@
                                         <p>Tedarikçi Ekle ve Listele</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{ url('/alinacakurunler/ekle') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Eksik Ürünler Listesi</p>
-                                    </a>
-                                </li>
+                                
 
 
                             </ul>
