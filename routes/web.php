@@ -59,3 +59,5 @@ Route::get('/tedarikci/sil/{id}', [TedarikciController::class,'silme']);
 
 
 Route::get('/pdf', [PdfController::class,'document']);
+
+Route::get('/takvim', [\App\Http\Controllers\TakvimController::class,'takvim']);

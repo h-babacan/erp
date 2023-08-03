@@ -1,6 +1,7 @@
 <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-        <strong>Copyright &copy; {{date('Y')}}  <a target="_blank" href="https://seytim.org">SEYTİM</a>.</strong>
+    <div class="float-left d-none d-sm-block">
+        <strong>Teeelif hakkı &copy; Ben açıkça söyleyeyim hangi yıldayız bilmiyorum -20:28 <a href="https://youtu.be/00AtBonL-04">Devrimser </a> adam bunu yaparken çok keyif aldı.</strong> Tüm telif haklarımız saklambaç oynuyor.
     </div>
-     Tüm hakları saklıdır.
+
+    <!-- <strong>Copyright &copy; {{date('Y')}}  <a target="_blank" href="https://seytim.org">SEYTİM</a>.</strong> -->
 </footer>

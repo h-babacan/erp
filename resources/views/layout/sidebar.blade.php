@@ -9,9 +9,9 @@
     <div class="sidebar">
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
+            <!--<div class="image">
                 <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-            </div>
+            </div> -->
             <div class="info">
                 <a href="#" class="d-block">Furkan Doğan</a>
             </div>
@@ -145,12 +145,12 @@
 
                 <li class="nav-header">LABELS</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/takvim" class="nav-link">
                         <i class="nav-icon far fa-circle text-danger"></i>
-                        <p class="text">Important</p>
+                        <p class="text">Takvimi Görüntüle</p>
                     </a>
                 </li>
-                <li class="nav-item">
+              <!--  <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-circle text-warning"></i>
                         <p>Warning</p>
@@ -162,7 +162,7 @@
                         <p>Informational</p>
                     </a>
                 </li>
-
+                -->
         </nav>
         <!-- /.sidebar-menu -->
     </div>
