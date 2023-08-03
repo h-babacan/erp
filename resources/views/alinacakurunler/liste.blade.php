@@ -55,6 +55,7 @@
                                         <th>Min Stok</th>
                                         <th>Birim Fiyat</th>
                                         <th>İşlemler</th>
+                                        <th>Gösterge</th>
                                     </tr>
                                     </thead>
                                     <tbody>
