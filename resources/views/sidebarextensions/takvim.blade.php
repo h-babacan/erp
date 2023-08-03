@@ -20,7 +20,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Calendar</h1>
+                        <h1>Takvim</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -34,20 +34,20 @@
                         <div class="sticky-top mb-3">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Draggable Events</h4>
+                                    <h4 class="card-title">Sık Kullanılan Etkinlikler</h4>
                                 </div>
                                 <div class="card-body">
                                     <!-- the events -->
                                     <div id="external-events">
-                                        <div class="external-event bg-success">Lunch</div>
-                                        <div class="external-event bg-warning">Go home</div>
-                                        <div class="external-event bg-info">Do homework</div>
-                                        <div class="external-event bg-primary">Work on UI design</div>
-                                        <div class="external-event bg-danger">Sleep tight</div>
+                                        <div class="external-event bg-success">İş Yemeğine Katıl</div>
+                                        <div class="external-event bg-warning">Eve Git</div>
+                                        <div class="external-event bg-info">Müşteri Planlaması Yap</div>
+                                        <div class="external-event bg-primary">Arayüz Dizaynı Yap</div>
+                                        <div class="external-event bg-danger">Toplantıya git</div>
                                         <div class="checkbox">
                                             <label for="drop-remove">
                                                 <input type="checkbox" id="drop-remove">
-                                                remove after drop
+                                                Ekledikten Sonra Kaldır
                                             </label>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                             <!-- /.card -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Create Event</h3>
+                                    <h3 class="card-title">Etkinlik Oluştur</h3>
                                 </div>
                                 <div class="card-body">
                                     <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
@@ -71,10 +71,10 @@
                                     </div>
                                     <!-- /btn-group -->
                                     <div class="input-group">
-                                        <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+                                        <input id="new-event" type="text" class="form-control" placeholder="Etkinlik Başlığı">
 
                                         <div class="input-group-append">
-                                            <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+                                            <button id="add-new-event" type="button" class="btn btn-primary">Ekle</button>
                                         </div>
                                         <!-- /btn-group -->
                                     </div>
@@ -186,28 +186,28 @@
                 //Random default events
                 events: [
                     {
-                        title          : 'All Day Event',
+                        title          : 'Kontrol Yap',
                         start          : new Date(y, m, 1),
-                        backgroundColor: '#f56954', //red
-                        borderColor    : '#f56954', //red
+                        backgroundColor: '#801BE3 ', //purple
+                        borderColor    : '#801BE3 ', //purple
                         allDay         : true
                     },
                     {
-                        title          : 'Long Event',
+                        title          : 'Doğum Günün',
                         start          : new Date(y, m, d - 5),
                         end            : new Date(y, m, d - 2),
-                        backgroundColor: '#f39c12', //yellow
-                        borderColor    : '#f39c12' //yellow
+                        backgroundColor: '#DE368C ', //pink
+                        borderColor    : '#DE368C ' //pink
                     },
                     {
-                        title          : 'Meeting',
+                        title          : 'Müşteri planlaması Yap',
                         start          : new Date(y, m, d, 10, 30),
                         allDay         : false,
                         backgroundColor: '#0073b7', //Blue
                         borderColor    : '#0073b7' //Blue
                     },
                     {
-                        title          : 'Lunch',
+                        title          : 'İş Yemeğine Katıl',
                         start          : new Date(y, m, d, 12, 0),
                         end            : new Date(y, m, d, 14, 0),
                         allDay         : false,
@@ -215,7 +215,7 @@
                         borderColor    : '#00c0ef' //Info (aqua)
                     },
                     {
-                        title          : 'Birthday Party',
+                        title          : 'Toplantıya Git',
                         start          : new Date(y, m, d + 1, 19, 0),
                         end            : new Date(y, m, d + 1, 22, 30),
                         allDay         : false,
@@ -223,7 +223,7 @@
                         borderColor    : '#00a65a' //Success (green)
                     },
                     {
-                        title          : 'Click for Google',
+                        title          : 'Arayüz Dizaynı Yap',
                         start          : new Date(y, m, 28),
                         end            : new Date(y, m, 29),
                         url            : 'https://www.google.com/',

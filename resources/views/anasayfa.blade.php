@@ -1,56 +1,56 @@
-@@ -0,0 +1,66 @@
-@extends('layout.app')
 
-@section('css')
+                                    @extends('layout.app')
 
-@endsection
+                                    @section('css')
 
-@section('content')
+                                    @endsection
 
-    <div class="content-wrapper " >
+                                    @section('content')
+
+                                        <div class="content-wrapper " >
 
 
-        <!-- Main content -->
-        <section class="content">
+                                            <!-- Main content -->
+                                            <section class="content">
 
-            <div class="container-fluid">
-                <div class="row ">
-                    <div class="col-12 mt-2">
-                        <!-- Default box -->
-                        <div class="card ">
-                            <div class="card-header">
-                                <h3 class="card-title">Title</h3>
+                                                <div class="container-fluid">
+                                                    <div class="row ">
+                                                        <div class="col-12 mt-2">
+                                                            <!-- Default box -->
+                                                            <div class="card ">
+                                                                <div class="card-header">
+                                                                    <h3 class="card-title">Title</h3>
 
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
+                                                                    <div class="card-tools">
+                                                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                                                            <i class="fas fa-minus"></i>
+                                                                        </button>
+                                                                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                                                            <i class="fas fa-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
 
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 col-sm-6 col-md-3">
-                                        <div class="info-box">
+                                                                <div class="card-body">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-sm-6 col-md-3">
+                                                                            <div class="info-box">
 
-                                            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+                                                                                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
-                                            <div class="info-box-content">
-                                                <span class="info-box-text">CPU Trafiği</span>
-                                                <span class="info-box-number">
+                                                                                <div class="info-box-content">
+                                                                                    <span class="info-box-text">CPU Trafiği</span>
+                                                                                    <span class="info-box-number">
                   20
                   <small>%</small>
                 </span>
-                                            </div>
-                                            <!-- /.info-box-content -->
-                                        </div>
-                                        <!-- /.info-box -->
-                                    </div>
-                                    <!-- /.col -->
-                                    <div class="col-12 col-sm-6 col-md-3">
+                                                                                </div>
+                                                                                <!-- /.info-box-content -->
+                                                                            </div>
+                                                                            <!-- /.info-box -->
+                                                                        </div>
+                                                                        <!-- /.col -->
+                                                                        <div class="col-12 col-sm-6 col-md-3">
                                         <div class="info-box mb-3">
                                             <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
