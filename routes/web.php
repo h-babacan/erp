@@ -7,6 +7,7 @@ use App\Http\Controllers\AlinacakUrunlerController;
 use App\Http\Controllers\SiparisalController;
 use App\Http\Controllers\TedarikciController;
 use App\Http\Controllers\SatinalController;
+use App\Http\Controllers\WebController;
 
 
 /*
@@ -61,3 +62,5 @@ Route::get('/tedarikci/sil/{id}', [TedarikciController::class,'silme']);
 Route::get('/pdf', [PdfController::class,'document']);
 
 Route::get('/takvim', [\App\Http\Controllers\TakvimController::class,'takvim']);
+
+Route::get('/web/ekle', [WebController::class,'ekle']);

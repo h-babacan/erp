@@ -23,7 +23,7 @@
                 <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                 <div class="input-group-append">
                     <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
+                        <i class="fa-solid fa-anchor"></i>
                     </button>
                 </div>
             </div>
@@ -37,7 +37,7 @@
 
                 <li class="nav-item">
                     <a href="{{ url('/') }}" class="nav-link active">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="fa-solid fa-house fa-beat" style="color: #fcfcfc;"></i>
                         <p>
                             Anasayfa
 
@@ -46,7 +46,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="fa-solid fa-people-group fa-fade" style="color: #d5fe0b;"></i>
                         <p>
                             Müşteri İşlemleri
                             <i class="right fas fa-angle-left"></i>
@@ -55,15 +55,21 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ url('/musteriler/ekle') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fa-solid fa-user-plus"></i>
                                 <p>Yeni Müşteri Ekleme</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{ url('/musteriler/dataliste') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fa-solid fa-users"></i>
                                 <p>Müşteri Listesi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/web/ekle') }}" class="nav-link">
+                                <i class="fa-solid fa-spider"></i>
+                                <p>Devrimsever Ekle</p>
                             </a>
                         </li>
 
@@ -73,7 +79,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="fa-solid fa-square-pen fa-bounce" style="color: #a112e2;"></i>
                         <p>
                             Planlama İşlemleri
                             <i class="right fas fa-angle-left"></i>
@@ -84,7 +90,7 @@
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="fa-solid fa-basket-shopping"></i>
                                 <p>
                                     Satın Alma İşlemleri
                                     <i class="right fas fa-angle-left"></i>
@@ -93,14 +99,14 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{ url('/deneme1') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa-solid fa-splotch"></i>
                                         <p>Deneme1</p>
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="{{ url('/deneme2') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa-solid fa-screwdriver-wrench"></i>
                                         <p>DENEME 2</p>
                                     </a>
                                 </li>
@@ -112,7 +118,7 @@
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="fa-solid fa-list-ul" style="color: #11ee71;"></i>
                                 <p>
                                    Listeler
                                     <i class="right fas fa-angle-left"></i>
@@ -121,19 +127,19 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{ url('/tedarikci/ekle') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa-solid fa-layer-group"></i>
                                         <p>Tedarikçi Ekle ve Listele</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ url('/alinacakurunler/ekle') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa-solid fa-file-circle-minus"></i>
                                         <p>Eksik Ürünler Listesi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ url('/alinacakurunler/satinal') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa-brands fa-shopify"></i>
                                         <p>Satın Alınan Ürünler</p>
                                     </a>
                                 </li>
@@ -146,7 +152,7 @@
                 <li class="nav-header">LABELS</li>
                 <li class="nav-item">
                     <a href="/takvim" class="nav-link">
-                        <i class="nav-icon far fa-circle text-danger"></i>
+                        <i class="fa-regular fa-calendar fa-beat-fade" style="color: #a66026;"></i>
                         <p class="text">Takvimi Görüntüle</p>
                     </a>
                 </li>
