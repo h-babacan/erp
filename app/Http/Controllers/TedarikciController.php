@@ -19,18 +19,18 @@ class TedarikciController extends Controller
             'tedarikci_adsoyad'  => 'required',
             'telefon' => 'required',
         );
-//        $messages=array(
-//            'tedarikci_adsoyad.required' => 'Lütfen tedarikçinin ismini giriniz.',
-//            'tedarikci_adsoyad.unique' => 'Tedarikçi ismi zaten kayıtlı!',
-//            'telefon.unique' => 'Bu telefon numarası başka bir tedarikçiye aittir.',
-//
-//        );
-//        $validator=Validator::make($request->all(),$rules,$messages);
-//        if($validator->fails())
-//        {
-//            $messages=$validator->messages();
-//            return response()->json(["messages"=>$messages], 500);
-//        }
+       $messages=array(
+           'tedarikci_adsoyad.required' => 'Lütfen tedarikçinin ismini giriniz.',
+           'tedarikci_adsoyad.unique' => 'Tedarikçi ismi zaten kayıtlı!',
+           'telefon.unique' => 'Bu telefon numarası başka bir tedarikçiye aittir.',
+
+/       );
+        $validator=Validator::make($request->all(),$rules,$messages);
+        if($validator->fails())
+        {
+            $messages=$validator->messages();
+            return response()->json(["messages"=>$messages], 500);
+        }
 
         $getir = Tedarikciler::where('telefon', $request->telefon)->first();
         if ($getir) {
