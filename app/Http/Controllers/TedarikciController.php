@@ -15,11 +15,10 @@ class TedarikciController extends Controller
     }
     public function ekleme(Request $request)
     {
-//        $rules = array(
-//            'tedarikci_adsoyad'  => 'required',
-//            'telefon' => 'required',
-//
-//        );
+       $rules = array(
+            'tedarikci_adsoyad'  => 'required',
+            'telefon' => 'required',
+        );
 //        $messages=array(
 //            'tedarikci_adsoyad.required' => 'Lütfen tedarikçinin ismini giriniz.',
 //            'tedarikci_adsoyad.unique' => 'Tedarikçi ismi zaten kayıtlı!',
