@@ -24,7 +24,7 @@ class TedarikciController extends Controller
            'tedarikci_adsoyad.unique' => 'Tedarikçi ismi zaten kayıtlı!',
            'telefon.unique' => 'Bu telefon numarası başka bir tedarikçiye aittir.',
 
-/       );
+       );
         $validator=Validator::make($request->all(),$rules,$messages);
         if($validator->fails())
         {
