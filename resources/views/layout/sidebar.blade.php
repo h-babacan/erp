@@ -98,9 +98,9 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url('/deneme1') }}" class="nav-link">
-                                        <i class="fa-solid fa-splotch"></i>
-                                        <p>Deneme1</p>
+                                    <a href="{{ url('/alinacakurunler/ekle') }}" class="nav-link">
+                                        <i class="fa-solid fa-file-circle-minus"></i>
+                                        <p>Eksik Ürün Ekle </p>
                                     </a>
                                 </li>
 
@@ -132,7 +132,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ url('/alinacakurunler/ekle') }}" class="nav-link">
+                                    <a href="{{ url('/alinacakurunler/liste') }}" class="nav-link">
                                         <i class="fa-solid fa-file-circle-minus"></i>
                                         <p>Eksik Ürünler Listesi</p>
                                     </a>
@@ -174,4 +174,33 @@
     </div>
 
 </aside>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Sayfa URL'sini al
+        const currentHref = window.location.href;
+
+        // Belirtilen URL'ye göre menüyü seç
+        $('.nav-sidebar a').each(function () {
+            const activeHref = $(this).prop('href');
+
+            if (currentHref.indexOf(activeHref) === 0) {
+                $(this).addClass('active');
+                $(this).closest('.nav-treeview').parent().addClass('menu-open');
+                $(this).parents('.nav-item').addClass('menu-open');
+            }
+        });
+
+        // Alt menüleri aç veya kapat
+        $('.nav-treeview .nav-item').each(function () {
+            const activeHref = $(this).find('.nav-link').prop('href');
+
+            if (currentHref.indexOf(activeHref) === 0) {
+                $(this).addClass('menu-open');
+            }
+        });
+    });
+</script>
 
