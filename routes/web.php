@@ -4,9 +4,9 @@ use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MusteriController;
 use App\Http\Controllers\AlinacakUrunlerController;
-use App\Http\Controllers\TakvimController;
 use App\Http\Controllers\TedarikciController;
 use App\Http\Controllers\SatinalController;
+use App\Http\Controllers\FullCalendarController;
 
 
 
