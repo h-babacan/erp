@@ -50,7 +50,6 @@
 
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
-
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
@@ -64,10 +63,6 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-<<<<<<< Updated upstream
 <script src="../../dist/js/sidebar.js"> </script>
-=======
-
->>>>>>> Stashed changes
 </body>
 </html>

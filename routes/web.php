@@ -4,11 +4,10 @@ use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MusteriController;
 use App\Http\Controllers\AlinacakUrunlerController;
-use App\Http\Controllers\TakvimController;
+use App\Http\Controllers\SiparisalController;
 use App\Http\Controllers\TedarikciController;
 use App\Http\Controllers\SatinalController;
 use App\Http\Controllers\WebController;
-
 
 
 /*
@@ -38,8 +37,6 @@ Route::get('/musteriler/sil/{id}', [MusteriController::class,'silme']);
 Route::post('/musteriler/listedata', [MusteriController::class,'listedata']);
 
 Route::get('/alinacakurunler/ekle', [AlinacakUrunlerController::class,'ekle']);
-Route::post('/alinacakurunler/ekleme', [AlinacakUrunlerController::class,'ekleme']);
-Route::get('/alinacakurunler/liste', [AlinacakUrunlerController::class,'dataliste']);
 Route::post('alinacakurunler/listeyigetir',[AlinacakUrunlerController::class,'listeyigetir']);
 Route::get('/alinacakurunler/duzenle/{id}', [AlinacakUrunlerController::class,'duzenle']);
 Route::post('/alinacakurunler/guncelleme', [AlinacakUrunlerController::class,'guncelleme']);
@@ -64,16 +61,6 @@ Route::get('/tedarikci/sil/{id}', [TedarikciController::class,'silme']);
 
 Route::get('/pdf', [PdfController::class,'document']);
 
-<<<<<<< Updated upstream
 Route::get('/takvim', [\App\Http\Controllers\TakvimController::class,'takvim']);
 
 Route::get('/web/ekle', [WebController::class,'ekle']);
-=======
-Route::get('/takvim', [TakvimController::class,'takvim']);
-
-
-
-
-
-
->>>>>>> Stashed changes

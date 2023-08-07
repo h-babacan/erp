@@ -128,6 +128,4 @@
             )
         }
     })</script>
-
-
 @endsection
