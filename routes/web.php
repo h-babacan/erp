@@ -4,9 +4,9 @@ use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MusteriController;
 use App\Http\Controllers\AlinacakUrunlerController;
-use App\Http\Controllers\TakvimController;
 use App\Http\Controllers\TedarikciController;
 use App\Http\Controllers\SatinalController;
+use App\Http\Controllers\FullCalendarController;
 
 
 
@@ -63,7 +63,13 @@ Route::get('/tedarikci/sil/{id}', [TedarikciController::class,'silme']);
 
 Route::get('/pdf', [PdfController::class,'document']);
 
-Route::get('/takvim', [TakvimController::class,'takvim']);
+
+
+
+Route::get('/takvim',[FullCalendarController::class, 'takvim']);
+Route::post('/takvim/ekle',[FullCalendarController::class, 'createEvent']);
+Route::post('/takvim/sil',[FullCalendarController::class,'deleteEvent']);
+
 
 
 
