@@ -8,6 +8,7 @@ use App\Http\Controllers\SiparisalController;
 use App\Http\Controllers\TedarikciController;
 use App\Http\Controllers\SatinalController;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\FullCalendarController;
 
 
 /*
@@ -61,6 +62,9 @@ Route::get('/tedarikci/sil/{id}', [TedarikciController::class,'silme']);
 
 Route::get('/pdf', [PdfController::class,'document']);
 
-Route::get('/takvim', [\App\Http\Controllers\TakvimController::class,'takvim']);
-
 Route::get('/web/ekle', [WebController::class,'ekle']);
+
+Route::get('/takvim',[FullCalendarController::class, 'getEvent']);
+Route::post('/takvim/ekle',[FullCalendarController::class, 'createEvent']);
+Route::post('/takvim/sil',[FullCalendarController::class,'deleteEvent']);
+
