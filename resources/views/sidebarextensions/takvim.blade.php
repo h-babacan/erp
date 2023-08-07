@@ -48,8 +48,8 @@
                 },
                 navLinks: true,
                 editable: true,
-                events: "getEvent",
-                displayEventTime: true,
+                events: "takvim",
+                displayEventTime: false,
                 eventRender: function (event, element, view) {
                     if (event.allDay === 'true') {
                         event.allDay = true;

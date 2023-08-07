@@ -7,7 +7,7 @@ use App\Models\Event;
 
 class FullCalendarController extends Controller
 {
-    public function getEvent(){
+    public function takvim(){
         if(request()->ajax()){
             $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
             $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');

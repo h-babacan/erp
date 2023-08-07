@@ -64,7 +64,7 @@ Route::get('/pdf', [PdfController::class,'document']);
 
 Route::get('/web/ekle', [WebController::class,'ekle']);
 
-Route::get('/takvim',[FullCalendarController::class, 'getEvent']);
+Route::get('/takvim',[FullCalendarController::class, 'takvim']);
 Route::post('/takvim/ekle',[FullCalendarController::class, 'createEvent']);
 Route::post('/takvim/sil',[FullCalendarController::class,'deleteEvent']);
 
