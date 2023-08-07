@@ -1,8 +1,6 @@
 @extends('layout.app')
 
 @section('css')
-
-    <link rel="stylesheet" href='https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css' >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.1/fullcalendar.min.css" />
 @endsection
 @section('content')
@@ -19,7 +17,7 @@
         </section>
         <section class="content">
             <div class="container-fluid">
-    <div class="container"><p><h1>TAKVİM</h1></p>
+    <div class="container"><p><h1>Eklemek/Silmek için tıklayınız.</h1></p>
         <div class="panel panel-primary">
             <div class="panel-heading">
                 Takvim
@@ -49,7 +47,7 @@
                 navLinks: true,
                 editable: true,
                 events: "takvim",
-                displayEventTime: false,
+                displayEventTime: true,
                 eventRender: function (event, element, view) {
                     if (event.allDay === 'true') {
                         event.allDay = true;
