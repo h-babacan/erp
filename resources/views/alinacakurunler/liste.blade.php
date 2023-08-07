@@ -53,9 +53,10 @@
                                         <th>Maks Stok</th>
                                         <th>Depodaki Miktar</th>
                                         <th>Min Stok</th>
+                                        <th>Alınacak Miktar <br>(Önerilen)</th>
                                         <th>Birim Fiyat</th>
                                         <th>İşlemler</th>
-                                        <th>Gösterge</th>
+
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -134,6 +135,7 @@
                     { data: 'maks_stok', name: 'maks_stok'},
                     { data: 'depo_miktar', name: 'depo_miktar'},
                     { data: 'min_stok', name: 'min_stok'},
+                    { data: 'alinacak_miktar', name: 'alinacak_miktar'},
                     { data: 'birim_fiyat', name: 'birim_fiyat'},
                     { data: 'butonlar', name: 'butonlar', orderable: false, searchable: false }
                 ]

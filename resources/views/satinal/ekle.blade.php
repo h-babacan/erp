@@ -54,6 +54,10 @@
                                         <th>Depo Miktarı</th>
                                         <th>Minimum Stok</th>
                                         <th>Birim Fiyatı</th>
+                                        <th>Alınan Miktar</th>
+                                        <th>Ödenecek Tutar</th>
+{{--                                        <th>İşlem</th>--}}
+
 
 
 
@@ -61,6 +65,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+
 
 
                                     </tbody>
@@ -136,7 +141,10 @@
                     { data: 'maks_stok', name: 'maks_stok'},
                     { data: 'depo_miktar', name: 'depo_miktar'},
                     { data: 'min_stok', name: 'min_stok'},
-                    { data: 'birim_fiyat', name: 'birim_fiyat'}
+                    { data: 'birim_fiyat', name: 'birim_fiyat'},
+                    { data: 'alinacak_miktar', name: 'alinacak_miktar'},
+                    { data: 'odenecek_tutar', name: 'odenecek_tutar'},
+                    // { data: 'butonlar', name: 'butonlar', orderable: false, searchable: false }
                 ]
 
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');

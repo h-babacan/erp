@@ -66,7 +66,7 @@
                                             <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
                                             <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
                                             <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
-                                            <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+                                            <li><a class="text-gray-dark" href="#"><i class="fas fa-square"></i></a></li>
                                         </ul>
                                     </div>
                                     <!-- /btn-group -->

@@ -2,19 +2,32 @@
 <html lang="en">
 <head>
     <style>
-        #d404 {
+        /*#d404 {*/
+        /*    margin-left: 30%;*/
+        /*    margin-right: 30%;*/
+        /*    justify-content: center;*/
+        /*    border-radius: 15px 50px;*/
+        /*    background: #be0606;*/
+        /*    padding: 20px;*/
+        /*    width: 360px;*/
+        /*    height: 250px;*/
+        /*    display: flex;*/
+        /*}*/
+        #cagri {
+
+            background-image: url("/../../dist/img/hata_404.jpg"); /* Kullanılacak Görsel */
+            background-color: tomato; /* Görsel Çalışmassa Arkaplan Rengi */
+            background-position: center; /* Görseli Ortala */
+            background-repeat: no-repeat; /* Resmi tekrarlama */
+            background-size: cover; /* resmi ekranı kaplayacak hale getir. */
+            width: 560px;
+            height: 550px;
             margin-left: 30%;
             margin-right: 30%;
-            justify-content: center;
-            border-radius: 15px 50px;
-            background: #be0606;
-            padding: 20px;
-            width: 360px;
-            height: 250px;
-            display: flex;
+
         }
     </style>
-    <meta http-equiv="refresh" content="2;url=/" />
+    <meta http-equiv="refresh" content="1;url=/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sayfa Bulunamadı !</title>
@@ -26,12 +39,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2 text-lg-center">
-                <div id="d404">
-                <h1 style="font-size: 162px; color:white; text-align: center;">404!</h1>
+                <div id="cagri">
+                    <h1 style="font-size: 162px; color:white; text-align: center;"></h1>
                 </div>
                 <br>
                 <br>
-                <h2>Maalesef Böyle Bir Sayfa Bulunamadı..</h2>
+                <h2>Hayırdır Kardeşşşş..</h2>
                 <br>
                 <br>
                 <br>

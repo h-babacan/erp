@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+=======
+@extends('layout.app')
+>>>>>>> Stashed changes
 
                                     @extends('layout.app')
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Satinal;
+use App\Models\Alinacakurunler;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -14,14 +15,10 @@ class SatinalController extends Controller
 
     public function ekleme(Request $request)
     {
+        $getir = Alinacakurunler::where('urun_kodu', $request->urun_kodu)->first();
 
-        $getir = Satinal::where('urun_kodu', $request->urun_kodu)->first();
         if ($getir) {
-            return redirect()->back()->with([
-                'mesaj' => 'Bu Ürün Zaten Listede Bulunuyor.',
-                'durum' => '0',
-            ]);
-        } else {
+            // Item exists in "alınacak ürünler" list, so let's move it to "satın alınan ürünler" list.
             $yeni_urun = new Satinal();
             $yeni_urun->urun_adi = $request->urun_adi;
             $yeni_urun->urun_kodu = $request->urun_kodu;
@@ -30,33 +27,37 @@ class SatinalController extends Controller
             $yeni_urun->depo_miktar = $request->depo_miktar;
             $yeni_urun->min_stok = $request->min_stok;
             $yeni_urun->birim_fiyat = $request->birim_fiyat;
+            $yeni_urun->alinacak_miktar = $request->alinacak_miktar;
+            $yeni_urun->odenecek_tutar = $request->birim_fiyat * $request->alinacak_miktar;
             $sonuc = $yeni_urun->save();
 
             if ($sonuc) {
+                // If the item was successfully moved, delete it from the "alınacak ürünler" list.
+                $getir->delete();
                 return redirect('/alinacakurunler/satinal')->with([
-                    'mesaj' => 'Kayıt eklendi.',
-                    'durum' => '1',]);
-//                return redirect('/musteriler/dataliste
-//                ');
-
-
+                    'mesaj' => 'Kayıt eklendi ve Eksik Ürünler listesinden silindi.',
+                    'durum' => '1',
+                ]);
             } else {
                 return redirect()->back()->with([
                     'mesaj' => 'Kayıt eklenemedi.',
                     'durum' => '0',
                 ]);
             }
+        } else {
+            return redirect()->back()->with([
+                'mesaj' => 'Bu Ürün Zaten Listede Bulunuyor.',
+                'durum' => '0',
+            ]);
         }
-
-
     }
+
     public function listeyigetir(Request $request)
     {
         $tablo = Satinal::query();
         $data = DataTables::of($tablo)
             ->addColumn('butonlar', function ($tablo) {
                 return
-                    '<a href="' . url('musteriler/duzenle', ['id' => $tablo->id]) . '" class="btn btn-sm btn-success">Düzenle</a>' .
                     '<a class="btn btn-sm btn-danger ml-1"  onclick=" sil(\'' . url('musteriler/sil', ['id' => $tablo->id]) . '\')">Sil</a>';
             })
             ->rawColumns(['butonlar'])
