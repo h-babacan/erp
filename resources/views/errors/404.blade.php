@@ -34,7 +34,7 @@
                 <br>
                 <br>
                 <br>
-                <h2>Anasayfaya yönlendiriliyorsunuz..</h2>
+                <h2>Anasayfaya dönmek için tıklayınız.</h2>
                 <!-- Add the button below -->
                 <button onclick="redirectToHomepage()">Anasayfaya Dön</button>
             </div>

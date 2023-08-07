@@ -17,10 +17,10 @@
         </section>
         <section class="content">
             <div class="container-fluid">
-    <div class="container"><p><h1>Eklemek/Silmek için tıklayınız.</h1></p>
+    <div class="container" style="background-color: #ffffff;"><p><h1>Eklemek/Silmek için tıklayınız.</h1></p>
         <div class="panel panel-primary">
             <div class="panel-heading">
-                Takvim
+                <hr>
             </div>
             <div class="panel-body" >
                 <div id='calendar'></div>
