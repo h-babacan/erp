@@ -14,7 +14,7 @@
             display: flex;
         }
     </style>
-    <meta http-equiv="refresh" content="2;url=/" />
+{{--    <meta http-equiv="refresh" content="2;url=/" />--}}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sayfa Bulunamadı !</title>
@@ -39,8 +39,9 @@
             </div>
         </div>
     </div>
-
+<button> </button>
 </section>
+
 
 
 

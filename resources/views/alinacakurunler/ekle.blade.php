@@ -1,14 +1,3 @@
-<!-- Google Font: Source Sans Pro -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-<!-- DataTables -->
-<link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-<!-- Theme style -->
-
-
 @extends('layout.app')
 
 @section('css')
@@ -29,66 +18,91 @@
                         <!-- Default box -->
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Eksik Ürünler Listesi</h3>
+                                <h3 class="card-title">Eksik Ürün Ekleme</h3>
 
                                 <div class="card-tools">
                                     <!-- sağ üste buton ekleme -->
                                 </div>
                             </div>
-                            <div class="card-body">
+                            <form action="{{url('alinacakurunler/ekleme')}}" method="post">
+                                {{ csrf_field() }}
                                 <div class="card-body">
-                                    <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
-                                        <tr>
-                                            <th>Ürün Adı</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
-                                            <th>İşlemler</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 4.0
-                                            </td>
-                                            <td>Win 95</td>
-                                            <td> 4</td>
-                                            <td>X</td>
-                                            <td> <button class="btn btn-danger" type="submit">Alındı(Listeden Sil)</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
 
-                                            <td>Furkan</td>
-                                            <td>Internet
-                                                Explorer 5.0
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td>5</td>
-                                            <td>C</td>
-                                            <td> <button class="btn btn-danger" type="submit">Alındı(Listeden Sil)</button>
-                                            </td>
-                                        </tr>
+                                    @if(session()->get('durum')=='1')
+                                        <div class="alert alert-success alert-dismissible">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 
-                                        </tbody>
+                                            {{session()->get('mesaj')}}
+                                        </div>
+                                    @endif
 
-                                    </table>
+
+                                    @if(session()->get('durum')=='0')
+                                        <div class="alert alert-danger alert-dismissible">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+
+                                            {{session()->get('mesaj')}}
+                                        </div>
+                                    @endif
+
+                                    <div class="form-group">
+                                        <label>Ürün Adı / Firma Adı <span style="color: red;">(*)</span></label>
+                                        <input type="text" class="form-control" name="urun_adi" id="urun_adi" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Ürün Kodu</label>
+                                        <input type="number" class="form-control" name="urun_kodu" id="urun_kodu" >
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Ürün Tipi</label>
+                                        <input type="text" class="form-control" name="urun_tipi" id="urun_tipi" >
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Maksimum Stok <span style="color: red;">(*)</span></label>
+
+
+                                        <input type="number" class="form-control"  name="maks_stok" id="maks_stok">
+
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label> Depo Miktarı </label>
+                                        <input type="number" class="form-control" name="depo_miktar" id="depo_miktar" >
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label> Minimum Stok </label>
+                                        <input type="number" class="form-control" name="min_stok" id="min_stok" >
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label> Birim Fiyat </label>
+                                        <input type="number" class="form-control" name="birim_fiyat" id="birim_fiyat" >
+                                    </div>
+
+
+
+
+
                                 </div>
                                 <!-- /.card-body -->
-
-                            </div>
-                            <!-- /.col -->
+                                <div class="card-footer">
+                                    <button class="btn btn-primary" type="submit">Kaydet</button>
+                                    <a href="#" class="btn btn-danger" type="submit">Vazgeç</a>
+                                </div>
+                                <!-- /.card-footer-->
+                            </form>
                         </div>
-                        <!-- /.row -->
+                        <!-- /.card -->
                     </div>
-                    <!-- /.container-fluid -->
                 </div>
             </div>
-        </section>      <!-- /.content -->
-
+        </section>
+        <!-- /.content -->
     </div>
 @endsection
 
@@ -100,45 +114,13 @@
 
 
 @section('js')
-    <!-- jQuery -->
-
-    <!-- Bootstrap 4 -->
-
-    <!-- DataTables  & Plugins -->
-    <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-    <script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-    <script src="../../plugins/jszip/jszip.min.js"></script>
-    <script src="../../plugins/pdfmake/pdfmake.min.js"></script>
-    <script src="../../plugins/pdfmake/vfs_fonts.js"></script>
-    <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-    <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-    <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-    <!-- AdminLTE App -->
-
-    <!-- AdminLTE for demo purposes -->
-{{--    <script src="../../dist/js/demo.js"></script>--}}
-    <!-- Page specific script -->
+    <script src="{{asset('/plugins/inputmask/jquery.inputmask.min.js')}}"></script>
     <script>
         $(function () {
-            $("#example1").DataTable({
-                "responsive": true, "lengthChange": false, "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
+
+            $('[data-mask]').inputmask();
+
+
         });
     </script>
-    </body>
-    </html>
 @endsection

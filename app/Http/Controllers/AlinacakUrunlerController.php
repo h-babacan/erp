@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Models\Alinacakurunler;
-use App\Models\Satinal;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -11,7 +10,7 @@ class AlinacakUrunlerController extends Controller
 {
 
     public function ekle(){
-        return view('alinacakurunler.liste');
+        return view('alinacakurunler.ekle');
     }
     public function ekleme(Request $request)
     {
@@ -31,10 +30,12 @@ class AlinacakUrunlerController extends Controller
             $yeni_urun->depo_miktar = $request->depo_miktar;
             $yeni_urun->min_stok = $request->min_stok;
             $yeni_urun->birim_fiyat = $request->birim_fiyat;
+            $yeni_urun->alinacak_miktar = $request->maks_stok - $request->depo_miktar;
+//            $yeni_urun->odenecek_tutar = $request->alinacak_miktar - $request->birim_fiyat;
             $sonuc = $yeni_urun->save();
 
             if ($sonuc) {
-               return redirect('/alinacakurunler/ekle')->with([
+               return redirect('/alinacakurunler/liste')->with([
                     'mesaj' => 'Kayıt eklendi.',
                     'durum' => '1',]);
 //                return redirect('/musteriler/dataliste
@@ -56,7 +57,7 @@ class AlinacakUrunlerController extends Controller
     {
         $data['alinacakurunler'] = Alinacakurunler::orderBy('id', 'desc')->get();
         $data['title'] = 'DataTable Eksik Ürünler Listesi';
-        return view('alinacakurunler.ekle', $data);
+        return view('alinacakurunler.liste', $data);
     }
 
     public function listeyigetir(Request $request)
@@ -97,14 +98,17 @@ class AlinacakUrunlerController extends Controller
     public function guncelleme(Request $request)
     {
         $urun = Alinacakurunler::find($request->id);
+//
+//        $urun->urun_adi = $request->urun_adi;
+//        $urun->urun_kodu = $request->urun_kodu;
+//        $urun->urun_tipi = $request->urun_tipi;
+//        $urun->maks_stok = $request->maks_stok;
+//        $urun->depo_miktar = $request->depo_miktar;
+//        $urun->min_stok = $request->min_stok;
+//        $urun->birim_fiyat = $request->birim_fiyat;
+//        $urun->alinacak_miktar = $request->maks_stok - $request->depo_miktar;
+//        $urun->odenecek_tutar = $request->alinacak_miktar - $request->birim_fiyat;
 
-        $urun->urun_adi = $request->urun_adi;
-        $urun->urun_kodu = $request->urun_kodu;
-        $urun->urun_tipi = $request->urun_tipi;
-        $urun->maks_stok = $request->maks_stok;
-        $urun->depo_miktar = $request->depo_miktar;
-        $urun->min_stok = $request->min_stok;
-        $urun->birim_fiyat = $request->birim_fiyat;
 
         $sonuc = $urun->save();
         if ($sonuc) {
