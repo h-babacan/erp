@@ -36,8 +36,14 @@
                 <br>
                 <h2>Anasayfaya dönmek için tıklayınız.</h2>
                 <!-- Add the button below -->
-                <button onclick="redirectToHomepage()">Anasayfaya Dön</button>
-            </div>
+                <link  href="http://fonts.googleapis.com/css?family=Cabin:400,500,600,bold" rel="stylesheet" type="text/css" >
+
+                <link  href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold" rel="stylesheet" type="text/css" >
+
+
+
+                <button onclick="redirectToHomepage('/')" style="background-color:darkred;color:white;width:30%;"> ANASAYFAYA DÖN </button>
+
         </div>
     </div>
 
