@@ -14,6 +14,40 @@ class AlinacakUrunlerController extends Controller
     }
     public function ekleme(Request $request)
     {
+        //controllerda form bilgilerinin uygun şartları sağladığından emin olduğumuz validation kodları
+        $request->validate([
+            'urun_adi' => 'required|string|max:150|unique : alinacakurunler',
+            'urun_kodu' => 'required|numeric|unique : alinacakurunler',
+            'urun_tipi' => 'required',
+            'maks_stok' => 'required|numeric',
+            'depo_miktar' => 'required|numeric',
+            'min_stok' => 'required|numeric',
+            'birim_fiyat' => 'required|numeric',
+        ],
+[
+    'urun_adi.required' => 'Lütfen Ürün adı giriniz.',
+    'urun_adi.string' => 'Lütfen sadece harflerden oluşan bir isim giriniz.',
+    'urun_adi.max' => 'İsim için maksimum 150 harf kullanabilirsiniz.',
+    'urun_adi.unique' => 'Ürün ismi benzersiz olmak zorundadır',
+
+    'urun_kodu.required' => 'Ürün kodu girmek zorundasınız.',
+    'urun_kodu.numeric' => 'Ürün kodu yalnızca sayılardan oluşmalıdır.',
+    'urun_kodu.unique' => 'Bu ürün koduna sahip bir ürün zaten var.',
+
+    'urun_tipi.required' => 'Ürün tipi seçilmek zorundadır.',
+
+    'maks_stok.required' => 'Maksimum stok değerini girmek zorundasınız.',
+    'maks_stok.numeric' => 'Maksimum stok değeri yalnızca sayılardan oluşabilir.',
+
+    'depo_miktar.required' => 'Depo miktarını girmek zorundasınız.',
+    'depo_miktar.numeric' => 'Depo miktar değeri yalnızca sayılardan oluşabilir',
+
+    'min_stok.required' => 'Minimum stok değerini girmek zorundasınız.',
+    'min_stok.numeric' => 'Minimum stok değeri yalnızca sayılardan oluşabilir.',
+
+    'birim_fiyat.required' => 'Birim fiyatı girmek zorundasınız.',
+    'birim_fiyat.numeric' => 'Birim fiyat değeri yalnızca sayılardan oluşabilir.',
+]);
         $getir = Alinacakurunler::where('urun_kodu', $request->urun_kodu)->first();
 
         if ($getir) {

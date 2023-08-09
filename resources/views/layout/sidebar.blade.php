@@ -13,7 +13,7 @@
                 <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div> -->
             <div class="info">
-                <a href="#" class="d-block">Furkan Doğan</a>
+                <a href="#" class="d-block">Satın Alma Modülü</a>
             </div>
         </div>
 
@@ -66,12 +66,7 @@
                                 <p>Müşteri Listesi</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/web/ekle') }}" class="nav-link">
-                                <i class="fa-solid fa-spider"></i>
-                                <p>Devrimsever Ekle</p>
-                            </a>
-                        </li>
+
 
 
                     </ul>
@@ -104,12 +99,6 @@
                                     </a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="{{ url('/deneme2') }}" class="nav-link">
-                                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                                        <p>DENEME 2</p>
-                                    </a>
-                                </li>
 
 
                             </ul>
