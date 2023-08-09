@@ -9,6 +9,11 @@
 @endsection
 
 @section('content')
+<input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Name" value="{{ old('name') }}">
+<label for="name">Name</label>
+@error('name')
+<div class="invalid-feedback">{{$message}}</div>
+@enderror
 
     <div class="content-wrapper">
 
@@ -50,13 +55,19 @@
                                     @endif
 
                                     <div class="form-group">
-                                        <label>Tedarikçi Adı <span style="color: red;">(*)</span></label>
-                                        <input type="text" class="form-control" name="tedarikci_adsoyad" id="tedarikci_adsoyad" required>
+                                        <label for="tedarikci_adsoyad">Tedarikçi Adı Soyadı</label>
+                                        <input type="text" name="tedarikci_adsoyad" class="form-control @error('tedarikci_adsoyad') is-invalid @enderror" id="tedarikci_adsoyad" placeholder="İsim giriniz" value="{{ old('tedarikci_adsoyad') }}">
+                                        @error('tedarikci_adsoyad')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label>Tedarikçi Telefon Numarası</label>
-                                        <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask name="telefon" id="telefon">
+                                        <input type="text" class="form-control @error('telefon') is-invalid @enderror" data-inputmask='"mask": "(999) 999-9999"' data-mask name="telefon" id="telefon" value="{{ old('telefon') }}">
+                                        @error('telefon')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
                                     </div>
 
 
@@ -65,12 +76,14 @@
 
                                     <div class="form-group">
                                         <label>Tedarikçi tipi <span style="color: red;">(*)</span></label>
-                                        <select class="form-control" name="tedarikci_tipi" id="tedarikci_tipi" required>
+                                        <select class="form-control @error('tedarikci_tipi') is-invalid @enderror" name="tedarikci_tipi" id="tedarikci_tipi" required>
                                             <option selected value="Doğrudan Tedarik">Doğrudan Tedarik</option>
                                             <option value="Dolaylı Tedarik">Dolaylı Tedarik</option>
                                             <option value="Mal Tedariği ve Hizmet Alımı">Mal Tedariği ve Hizmet Alımı</option>
-
                                         </select>
+                                        @error('tedarikci_tipi')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
 
                                     </div>
 
