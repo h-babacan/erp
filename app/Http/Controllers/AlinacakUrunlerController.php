@@ -16,13 +16,14 @@ class AlinacakUrunlerController extends Controller
     {
         //controllerda form bilgilerinin uygun şartları sağladığından emin olduğumuz validation kodları
         $request->validate([
-            'urun_adi' => 'required|string|max:150|unique : alinacakurunler',
-            'urun_kodu' => 'required|numeric|unique : alinacakurunler',
+            'urun_adi' => 'required|string|max:150|unique :alinacakurunler',
+            'urun_kodu' => 'required|numeric|unique :alinacakurunler',
             'urun_tipi' => 'required',
             'maks_stok' => 'required|numeric',
             'depo_miktar' => 'required|numeric',
             'min_stok' => 'required|numeric',
             'birim_fiyat' => 'required|numeric',
+
         ],
 [
     'urun_adi.required' => 'Lütfen Ürün adı giriniz.',
