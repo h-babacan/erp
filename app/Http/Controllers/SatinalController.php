@@ -29,6 +29,7 @@ class SatinalController extends Controller
             $yeni_urun->birim_fiyat = $request->birim_fiyat;
             $yeni_urun->alinacak_miktar = $request->alinacak_miktar;
             $yeni_urun->odenecek_tutar = $request->birim_fiyat * $request->alinacak_miktar;
+            $yeni_urun->tarih = $request->datepicker; // Eklenen kısım
             $sonuc = $yeni_urun->save();
 
             if ($sonuc) {

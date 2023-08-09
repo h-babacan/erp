@@ -14,8 +14,8 @@ class AlinacakUrunlerController extends Controller
     }
     public function ekleme(Request $request)
     {
-
         $getir = Alinacakurunler::where('urun_kodu', $request->urun_kodu)->first();
+
         if ($getir) {
             return redirect()->back()->with([
                 'mesaj' => 'Bu Ürün Zaten Listede Bulunuyor.',
@@ -31,17 +31,15 @@ class AlinacakUrunlerController extends Controller
             $yeni_urun->min_stok = $request->min_stok;
             $yeni_urun->birim_fiyat = $request->birim_fiyat;
             $yeni_urun->alinacak_miktar = $request->maks_stok - $request->depo_miktar;
-//            $yeni_urun->odenecek_tutar = $request->alinacak_miktar - $request->birim_fiyat;
+
+
             $sonuc = $yeni_urun->save();
 
             if ($sonuc) {
-               return redirect('/alinacakurunler/liste')->with([
+                return redirect('/alinacakurunler/liste')->with([
                     'mesaj' => 'Kayıt eklendi.',
-                    'durum' => '1',]);
-//                return redirect('/musteriler/dataliste
-//                ');
-
-
+                    'durum' => '1',
+                ]);
             } else {
                 return redirect()->back()->with([
                     'mesaj' => 'Kayıt eklenemedi.',
@@ -49,8 +47,6 @@ class AlinacakUrunlerController extends Controller
                 ]);
             }
         }
-
-
     }
 
     public function dataliste()

@@ -145,23 +145,7 @@
         });
     </script>
 
-    <script>
-        function sil(url) {
-            Swal.fire({
-                title: 'Emin misiniz?',
-                text: "Bu işlemi gerçekleştirmek istediğinizden emin misiniz?",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Evet',
-                cancelButtonText: 'Hayır',
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Silme işlemine onay verildiyse, belirtilen URL'ye yönlendir
-                    window.location.href = url;
-                }
-            });
-        }
-    </script>
+
+
+
 @endsection
