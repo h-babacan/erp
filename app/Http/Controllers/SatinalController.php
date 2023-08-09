@@ -36,7 +36,8 @@ class SatinalController extends Controller
                 // If the item was successfully moved, delete it from the "alınacak ürünler" list.
                 $getir->delete();
                 return redirect('/alinacakurunler/satinal')->with([
-                    'mesaj' => 'Kayıt eklendi ve Eksik Ürünler listesinden silindi.',
+                    'digerIslem' => true, // Bu değişkeni kullanarak Swal modalını tetikleyeceğiz
+                    'mesaj' => 'Ürün Satın Alınanlar Listesine eklendi ve Eksik Ürünler listesinden silindi.',
                     'durum' => '1',
                 ]);
             } else {

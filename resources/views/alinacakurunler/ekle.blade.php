@@ -24,7 +24,7 @@
                                     <!-- sağ üste buton ekleme -->
                                 </div>
                             </div>
-                            <form action="{{url('alinacakurunler/ekleme')}}" method="post">
+                            <form action="{{url('alinacakurunler/ekleme')}}" method="post" id="eksikurunForm">
                                 {{ csrf_field() }}
                                 <div class="card-body">
 
@@ -91,7 +91,7 @@
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">
-                                    <button class="btn btn-primary" type="submit">Kaydet</button>
+                                    <button class="btn btn-primary" type="button" id="kaydetButton">Kaydet</button>
                                     <a href="#" class="btn btn-danger" type="submit">Vazgeç</a>
                                 </div>
                                 <!-- /.card-footer-->
@@ -114,6 +114,9 @@
 
 
 @section('js')
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('/plugins/inputmask/jquery.inputmask.min.js')}}"></script>
     <script>
         $(function () {
@@ -121,6 +124,27 @@
             $('[data-mask]').inputmask();
 
 
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#kaydetButton").click(function() {
+                Swal.fire({
+                    title: 'Değişiklikleri kaydetmek istiyor musunuz?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Kaydet',
+                    denyButtonText: `Kaydetme`,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Kaydetme işlemi için formu gönder
+                        $("#eksikurunForm").submit();
+                    } else if (result.isDenied) {
+                        Swal.fire('Değişiklikler kaydedilmedi', '', 'info');
+                    }
+                });
+            });
         });
     </script>
 @endsection

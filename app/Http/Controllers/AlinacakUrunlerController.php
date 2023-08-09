@@ -37,6 +37,7 @@ class AlinacakUrunlerController extends Controller
 
             if ($sonuc) {
                 return redirect('/alinacakurunler/liste')->with([
+                    'digerIslem' => true, // Bu değişkeni kullanarak Swal modalını tetikleyeceğiz
                     'mesaj' => 'Kayıt eklendi.',
                     'durum' => '1',
                 ]);

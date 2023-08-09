@@ -24,7 +24,7 @@
                                     <!-- sağ üste buton ekleme -->
                                 </div>
                             </div>
-                            <form action="{{url('/satinal/ekleme')}}" method="post">
+                            <form action="{{url('/satinal/ekleme')}}" method="post" id="satinalForm">
                                 {{ csrf_field() }}
                                 <div class="card-body">
                                     <input type="hidden" value="{{$urun->id}}" name="id" id="id">
@@ -92,7 +92,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button class="btn btn-success" type="submit">Satın Al</button>
+                                    <button class="btn btn-success" type="button" id="kaydetButton">Satın Al</button>
                                     <a href="{{url('alinacakurunler/liste')}}" class="btn btn-danger" type="submit">Vazgeç</a>
                                 </div>
                             </form>
@@ -108,6 +108,7 @@
         <script src="//code.jquery.com/jquery-1.12.4.js"></script>
         <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="{{asset('/plugins/inputmask/jquery.inputmask.min.js')}}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             $(function () {
 
@@ -130,6 +131,27 @@
                     let birimFiyat = $('#birim_fiyat').val();
                     let odenecekTutar = alinacakMiktar * birimFiyat;
                     $('#odenecek_tutar').val(odenecekTutar);
+                });
+            });
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $("#kaydetButton").click(function() {
+                    Swal.fire({
+                        title: 'Bu Ürünü Satın Almak İstiyor Musunuz?',
+                        showDenyButton: true,
+                        showCancelButton: true,
+                        confirmButtonText: 'Satın Al',
+                        denyButtonText: `Satın Alma`,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Kaydetme işlemi için formu gönder
+                            $("#satinalForm").submit();
+                        } else if (result.isDenied) {
+                            Swal.fire('Ürün Satın Alınmadı', '', 'info');
+                        }
+                    });
                 });
             });
         </script>
