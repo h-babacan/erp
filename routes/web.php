@@ -70,6 +70,8 @@ Route::get('/takvim',[FullCalendarController::class, 'takvim']);
 Route::post('/takvim/ekle',[FullCalendarController::class, 'createEvent']);
 Route::post('/takvim/sil',[FullCalendarController::class,'deleteEvent']);
 
+Route::get('/takvim/data', 'TakvimController@getData')->name('takvim.data');
+
 Route::get('/datepicker', function () {
     return view('datepicker');});
 
