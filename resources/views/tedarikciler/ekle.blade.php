@@ -33,7 +33,7 @@
                                     <!-- sağ üste buton ekleme -->
                                 </div>
                             </div>
-                            <form action="{{url('tedarikci/ekleme')}}" method="post">
+                            <form action="{{url('tedarikci/ekleme')}}" method="post" id="tedarikciForm">
                                 {{ csrf_field() }}
                                 <div class="card-body">
 
@@ -90,7 +90,7 @@
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">
-                                    <button class="btn btn-primary" type="submit">Kaydet</button>
+                                    <button class="btn btn-primary" type="button" id="kaydetButton">Kaydet</button>
                                     <a href="#" class="btn btn-danger" type="submit">Vazgeç</a>
                                 </div>
                                 <!-- /.card-footer-->
@@ -271,5 +271,27 @@
             });
         }
     </script>
-@endsection
 
+    <script>
+        $(document).ready(function() {
+            $("#kaydetButton").click(function() {
+                Swal.fire({
+                    title: 'Değişiklikleri kaydetmek istiyor musunuz?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Kaydet',
+                    denyButtonText: `Kaydetme`,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Kaydetme işlemi için formu gönder
+                        $("#tedarikciForm").submit();
+                    } else if (result.isDenied) {
+                        Swal.fire('Değişiklikler kaydedilmedi', '', 'info');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+@endsection

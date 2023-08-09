@@ -56,7 +56,7 @@
                                         <th>Birim Fiyatı</th>
                                         <th>Alınan Miktar</th>
                                         <th>Ödenecek Tutar</th>
-                                        {{--                                        <th>İşlem</th>--}}
+                                        <th>Alınacak Tarih</th>
 
 
 
@@ -144,6 +144,13 @@
                     { data: 'birim_fiyat', name: 'birim_fiyat'},
                     { data: 'alinacak_miktar', name: 'alinacak_miktar'},
                     { data: 'odenecek_tutar', name: 'odenecek_tutar'},
+                    {
+                        data: 'tarih',    // Tarih alanının verilerini buradan alacak
+                        name: 'tarih',
+                        render: function(data, type, row) {
+                            return moment(data).format('DD-MM-YYYY'); // moment.js ile tarihi biçimlendir
+                        }
+                    }
                     // { data: 'butonlar', name: 'butonlar', orderable: false, searchable: false }
                 ]
 

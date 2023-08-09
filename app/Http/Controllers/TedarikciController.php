@@ -46,13 +46,12 @@ class TedarikciController extends Controller
             $sonuc = $yeni_tedarikci->save();
 
             if ($sonuc) {
-               return redirect('/tedarikci/ekle')->with([
-                   'mesaj' => 'Kayıt eklendi.',
-                   'durum' => '1',]);
-//                return redirect('/tedarikci/ekle
-//                ');
-
-
+                // Yeni tedarikçi başarıyla eklenirse, digerIslem Swal'ını göster
+                return redirect('/tedarikci/ekle')->with([
+                    'digerIslem' => true, // Bu değişkeni kullanarak Swal modalını tetikleyeceğiz
+                    'mesaj' => 'Kayıt eklendi.',
+                    'durum' => '1',
+                ]);
             } else {
                 return redirect()->back()->with([
                     'mesaj' => 'Kayıt eklenemedi.',
