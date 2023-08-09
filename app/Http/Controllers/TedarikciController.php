@@ -15,23 +15,22 @@ class TedarikciController extends Controller
     }
     public function ekleme(Request $request)
     {
-//        $rules = array(
-//            'tedarikci_adsoyad'  => 'required',
-//            'telefon' => 'required',
-//
-//        );
-//        $messages=array(
-//            'tedarikci_adsoyad.required' => 'Lütfen tedarikçinin ismini giriniz.',
-//            'tedarikci_adsoyad.unique' => 'Tedarikçi ismi zaten kayıtlı!',
-//            'telefon.unique' => 'Bu telefon numarası başka bir tedarikçiye aittir.',
-//
-//        );
-//        $validator=Validator::make($request->all(),$rules,$messages);
-//        if($validator->fails())
-//        {
-//            $messages=$validator->messages();
-//            return response()->json(["messages"=>$messages], 500);
-//        }
+        //controller kısmında validate etmek için kurallar ve dönecek hata mesajları
+        $request->validate([
+            //unique için istediği şey tablo ismi vermemiz, o tablodaki isimlerle kıyaslıyor
+            'tedarikci_adsoyad' => 'required|string|max:100|unique:tedarikciler',
+            'tedarikci_tipi' => 'required',
+            'telefon' => 'required',
+        ],
+[
+                'tedarikci_adsoyad.required' => 'Lütfen Tedarikçi ismi giriniz.',
+                'tedarikci_adsoyad.string' => 'Lütfen sadece harflerden oluşan bir isim giriniz.',
+                'tedarikci_adsoyad.max' => 'İsim için maksimum 100 harf kullanabilirsiniz.',
+                'tedarikci_adsoyad.unique' => 'Bu Tedarikçi isminde birisi zaten ekli.',
+                'tedarikci_tipi.required' => 'Tedarikçi tipi seçmek zorundasınız.',
+                'telefon.required' => 'Lütfen telefon numaranızı giriniz.',
+
+            ]);
 
         $getir = Tedarikciler::where('telefon', $request->telefon)->first();
         if ($getir) {

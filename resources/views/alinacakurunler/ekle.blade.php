@@ -47,41 +47,60 @@
 
                                     <div class="form-group">
                                         <label>Ürün Adı / Firma Adı <span style="color: red;">(*)</span></label>
-                                        <input type="text" class="form-control" name="urun_adi" id="urun_adi" required>
+                                        <input type="text" class="form-control  @error('urun_adi') is-invalid @enderror" name="urun_adi" id="urun_adi" value="{{ old('urun_adi') }}">
+                                        @error('urun_adi')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+
                                     </div>
 
                                     <div class="form-group">
                                         <label>Ürün Kodu</label>
-                                        <input type="number" class="form-control" name="urun_kodu" id="urun_kodu" >
+                                        <input type="number" class="form-control @error('urun_kodu') is-invalid @enderror" name="urun_kodu" id="urun_kodu" value="{{ old('urun_kodu') }}">
+                                        @error('urun_kodu')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label>Ürün Tipi</label>
-                                        <input type="text" class="form-control" name="urun_tipi" id="urun_tipi" >
+                                        <input type="text" class="form-control @error('urun_tipi') is-invalid @enderror" name="urun_tipi" id="urun_tipi" >
+                                        @error('urun_tipi')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label>Maksimum Stok <span style="color: red;">(*)</span></label>
-
-
-                                        <input type="number" class="form-control"  name="maks_stok" id="maks_stok">
-
+                                        <input type="number" class="form-control @error('maks_stok') is-invalid @enderror"  name="maks_stok" id="maks_stok" value="{{ old('maks_stok') }}">
+                                        @error('maks_stok')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
                                     </div>
 
 
                                     <div class="form-group">
                                         <label> Depo Miktarı </label>
-                                        <input type="number" class="form-control" name="depo_miktar" id="depo_miktar" >
+                                        <input type="number" class="form-control @error('depo_miktar') is-invalid @enderror" name="depo_miktar" id="depo_miktar" value="{{ old('depo_miktar') }}">
+                                        @error('depo_miktar')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label> Minimum Stok </label>
-                                        <input type="number" class="form-control" name="min_stok" id="min_stok" >
+                                        <input type="number" class="form-control @error('min_stok') is-invalid @enderror" name="min_stok" id="min_stok" value="{{ old('min_stok') }}">
+                                        @error('min_stok')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label> Birim Fiyat </label>
-                                        <input type="number" class="form-control" name="birim_fiyat" id="birim_fiyat" >
+                                        <input type="number" class="form-control @error('birim_fiyat') is-invalid @enderror" name="birim_fiyat" id="birim_fiyat" value="{{ old('birim_fiyat') }}">
+                                        @error('birim_fiyat')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
                                     </div>
 
 
