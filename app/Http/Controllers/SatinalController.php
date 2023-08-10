@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Event;
 use App\Models\Satinal;
 use App\Models\Alinacakurunler;
 use Illuminate\Http\Request;
@@ -36,6 +37,13 @@ class SatinalController extends Controller
 
 
             if ($sonuc) {
+
+                $yeni_events = new Event();
+                $yeni_events->start= $request->datepicker;
+                $yeni_events->end = $request->datepicker;
+                $yeni_events->title = $request->urun_adi;
+                $yeni_events->save();
+
                 // If the item was successfully moved, delete it from the "alınacak ürünler" list.
                 $getir->delete();
                 return redirect('/alinacakurunler/satinal')->with([
