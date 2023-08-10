@@ -74,3 +74,12 @@
 @section('js')
 
 @endsection
+
+
+muhasebe->musteri_adsoyad = $request->musteri_adsoyad;
+$muhasebe->telefon = $request->telefon;
+$muhasebe->musteri_tipi = $request->musteri_tipi;
+$muhasebe->adres = $request->adres;
+$muhasebe->email = $request->email;
+$muhasebe->vergi = $request->vergi;
+$muhasebe->vergi_dairesi = $request->vergi_dairesi;

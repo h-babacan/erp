@@ -5,6 +5,7 @@
         <span class="brand-text font-weight-light">ERP </span>
     </a>
 
+
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user (optional) -->
@@ -60,18 +61,13 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="{{ url('/musteriler/liste') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Yeni Listesi</p>
-                            </a>
-                        </li>
+
 
 
                         <li class="nav-item">
                             <a href="{{ url('/musteriler/dataliste') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>DataTable Liste</p>
+                                <p> Müşteri Listesi</p>
                             </a>
                         </li>
 
@@ -82,11 +78,11 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
+                        <i class="fa-solid fa-file-contract" style="color: #45de57;"></i>                        <p>
                             Muhasebe İşlemleri
                             <i class="right fas fa-angle-left"></i>
                         </p>
+
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
@@ -98,19 +94,22 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li>
-                                    <a href="{{ url('/muhasebe/gelir') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Gelir Tutarları</p>
-                                    </a>
-                                </li>
 
                                 <li class="nav-item">
                                     <a href="{{ url('/muhasebe/gider') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Gider Tutarları</p>
+                                        <p>Fatura Giriş</p>
                                     </a>
                                 </li>
+
+                                <li>
+                                    <a href="{{ url('/muhasebe/gelir') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Gelir/Gider Tutarları</p>
+                                    </a>
+                                </li>
+
+
 
                                 <li class="nav-item">
                                     <a href="{{ url('/muhasebe/kesim') }}" class="nav-link">

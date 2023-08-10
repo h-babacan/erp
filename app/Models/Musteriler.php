@@ -10,7 +10,7 @@ class Musteriler extends Model
     use HasFactory;
 
     protected $table ='musteriler';
-    protected $primarykey ='id';
+    protected $primaryKey ='id';
 
 
 
