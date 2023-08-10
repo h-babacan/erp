@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
         /*#d404 {*/
         /*    margin-left: 30%;*/
         /*    margin-right: 30%;*/
@@ -13,21 +17,26 @@
         /*    height: 250px;*/
         /*    display: flex;*/
         /*}*/
-        #cagri {
-
+        #shadow{
+            -webkit-text-stroke: 1px black;
+            1px 0px 0px black,   /* Right shadow */
+            -1px 0px 0px black,  /* Left shadow */
+            0px 1px 0px black,   /* Bottom shadow */
+            0px -1px 0px black;  /* Top shadow */
+        }
+        #hata {
             background-image: url("/../../dist/img/hata_404.jpg"); /* Kullanılacak Görsel */
-            background-color: tomato; /* Görsel Çalışmassa Arkaplan Rengi */
-            background-position: center; /* Görseli Ortala */
-            background-repeat: no-repeat; /* Resmi tekrarlama */
-            background-size: cover; /* resmi ekranı kaplayacak hale getir. */
-            width: 560px;
-            height: 550px;
-            margin-left: 30%;
-            margin-right: 30%;
 
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
         }
     </style>
-    <meta http-equiv="refresh" content="2;url=/" />
+    <meta http-equiv="refresh" content="1;url=/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sayfa Bulunamadı !</title>
@@ -35,20 +44,26 @@
 </head>
 <body>
 
-<section style="padding-top:100px;">
-    <div class="container">
-        <div class="row">
+<section style="padding-top:100px;" id="hata">
+    <div class="container" >
+        <div class="row" >
             <div class="col-md-8 offset-md-2 text-lg-center">
-                <div id="cagri">
-                    <h1 style="font-size: 162px; color:white; text-align: center;"></h1>
+                <div >
+                    <h1 style="font-size: 162px; color:darkred; text-align: center;" id="shadow">404!</h1>
                 </div>
                 <br>
                 <br>
-                <h2>Hayırdır Kardeşşşş..</h2>
                 <br>
                 <br>
                 <br>
-                <h2>Anasayfaya yönlendiriliyorsunuz..</h2>
+                <br>
+                <br>
+                <br>
+                <h2 style="color:white;" id="shadow">Bizim ekip aradığınız sayfayı bulamadı..</h2>
+                <br>
+                <br>
+                <br>
+                <h2 style="color:white;" id="shadow">Anasayfaya yönlendiriliyorsunuz..</h2>
             </div>
         </div>
     </div>
