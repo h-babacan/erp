@@ -36,7 +36,7 @@
             background-size: contain;
         }
     </style>
-    <meta http-equiv="refresh" content="1;url=/" />
+{{--    <meta http-equiv="refresh" content="1;url=/" />--}}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sayfa Bulunamadı !</title>
@@ -63,14 +63,20 @@
                 <br>
                 <br>
                 <br>
-                <h2 style="color:white;" id="shadow">Anasayfaya yönlendiriliyorsunuz..</h2>
+                <h2 style="color:white;" id="shadow">Anasayfaya dönmek için tıklayınız..</h2>
+                <button onclick="redirectToHomepage()">Anasayfaya Dön</button>
             </div>
         </div>
     </div>
 
 </section>
 
-
+<script>
+    // JavaScript function to redirect to the homepage
+    function redirectToHomepage() {
+        window.location.href = "/";
+    }
+</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
