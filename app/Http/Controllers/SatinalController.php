@@ -32,8 +32,7 @@ class SatinalController extends Controller
             $yeni_urun->tarih = $request->datepicker; // Eklenen kısım
             $sonuc = $yeni_urun->save();
 
-            $yeni_event ->isim = $request->urun_adi;
-            $yeni_event ->tarih = $request->datepicker;
+
 
 
             if ($sonuc) {
@@ -76,5 +75,7 @@ class SatinalController extends Controller
 
         return view('satinal.ekle', $data);
     }
+
+
 
 }

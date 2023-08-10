@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\PdfController;
+use App\Models\Satinal;
+use App\Models\Musteriler;
+use App\Models\Tedarikciler;
+use App\Models\Alinacakurunler;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MusteriController;
 use App\Http\Controllers\AlinacakUrunlerController;
@@ -22,7 +26,11 @@ use App\Http\Controllers\FullCalendarController;
 */
 
 Route::get('/', function () {
-    return view('anasayfa');
+        $data['satin_alinan_sayisi'] = Satinal::count(); // Toplam satır sayısını aldık.
+        $data['musteri_sayisi'] = Musteriler::count(); // Toplam satır sayısını aldık.
+        $data['tedarikci_sayisi'] = Tedarikciler::count(); // Toplam satır sayısını aldık.
+        $data['eksik_urun_sayisi'] = Alinacakurunler::count(); // Toplam satır sayısını aldık.
+        return view('anasayfa', $data);
 });
 
 
@@ -47,6 +55,7 @@ Route::get('/alinacakurunler/satinal',[SatinalController::class,'ekle']);
 Route::post('/satinal/ekleme', [SatinalController::class,'ekleme']);
 Route::post('satinal/listeyigetir',[SatinalController::class,'listeyigetir']);
 Route::get('/satinal/dataliste', [SatinalController::class,'dataliste']);
+Route::get('/satinal/satirsayisi', [SatinalController::class,'satirsayisi']);
 
 
 
