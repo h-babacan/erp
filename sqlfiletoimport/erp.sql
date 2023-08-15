@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 03 Ağu 2023, 10:11:45
+-- Üretim Zamanı: 15 Ağu 2023, 13:34:48
 -- Sunucu sürümü: 10.4.28-MariaDB
 -- PHP Sürümü: 8.2.4
 
@@ -36,6 +36,7 @@ CREATE TABLE `alinacakurunler` (
   `depo_miktar` int(11) NOT NULL,
   `min_stok` int(11) NOT NULL,
   `birim_fiyat` int(11) NOT NULL,
+  `alinacak_miktar` int(11) NOT NULL,
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
@@ -44,8 +45,30 @@ CREATE TABLE `alinacakurunler` (
 -- Tablo döküm verisi `alinacakurunler`
 --
 
-INSERT INTO `alinacakurunler` (`id`, `urun_adi`, `urun_kodu`, `urun_tipi`, `maks_stok`, `depo_miktar`, `min_stok`, `birim_fiyat`, `updated_at`, `created_at`) VALUES
-(1, 'devrimser', '1', 'human', '1000', 500, 650, 100, '2023-08-01', '0000-00-00');
+INSERT INTO `alinacakurunler` (`id`, `urun_adi`, `urun_kodu`, `urun_tipi`, `maks_stok`, `depo_miktar`, `min_stok`, `birim_fiyat`, `alinacak_miktar`, `updated_at`, `created_at`) VALUES
+(44, 'Eksik ürün1', '1321', 'Eşantiyon', '1111', 111, 11, 23, 1000, '2023-08-10', '2023-08-10');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `start` datetime NOT NULL,
+  `end` datetime NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `events`
+--
+
+INSERT INTO `events` (`id`, `title`, `start`, `end`, `created_at`, `updated_at`) VALUES
+(7, 'Eksik ürün', '2023-08-29 00:00:00', '2023-08-29 00:00:00', '2023-08-10 13:26:34', '2023-08-10 13:26:34');
 
 -- --------------------------------------------------------
 
@@ -80,16 +103,17 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2016_06_01_000001_create_oauth_auth_codes_table', 1),
 (4, '2016_06_01_000002_create_oauth_access_tokens_table', 1),
 (5, '2016_06_01_000003_create_oauth_refresh_tokens_table', 1),
 (6, '2016_06_01_000004_create_oauth_clients_table', 1),
 (7, '2016_06_01_000005_create_oauth_personal_access_clients_table', 1),
-(8, '2019_08_19_000000_create_failed_jobs_table', 1),
-(9, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(10, '2014_10_12_100000_create_password_reset_tokens_table', 2);
+(12, '2014_10_12_000000_create_users_table', 2),
+(13, '2014_10_12_100000_create_password_reset_tokens_table', 2),
+(14, '2019_08_19_000000_create_failed_jobs_table', 2),
+(15, '2019_12_14_000001_create_personal_access_tokens_table', 2),
+(16, '2023_08_06_192909_create_events_table', 2);
 
 -- --------------------------------------------------------
 
@@ -120,7 +144,7 @@ CREATE TABLE `musteriler` (
 --
 
 INSERT INTO `musteriler` (`id`, `musteri_adsoyad`, `tc`, `telefon`, `adres`, `email`, `dogum_tarihi`, `cinsiyet`, `musteri_tipi`, `vergi_dairesi`, `create_user`, `edit_user`, `created_at`, `updated_at`, `durum`) VALUES
-(27, 'furkan', NULL, '(553) 671-9672', NULL, NULL, NULL, 'Erkek', 0, NULL, NULL, NULL, '2023-08-02 07:58:55', '2023-08-02 10:01:49', '0');
+(29, 'furkan', NULL, '(563) 210-____', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, '2023-08-09 08:30:26', '2023-08-09 08:30:26', '0');
 
 -- --------------------------------------------------------
 
@@ -259,13 +283,6 @@ CREATE TABLE `personal_access_tokens` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Tablo döküm verisi `personal_access_tokens`
---
-
-INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
-(1, 'App\\Models\\User', 1, 'Laravel Password Grant Client', '5affa692783bfd1d5558d53332ad74550cd985c4f8b29583a430f441ef00bad9', '[\"*\"]', NULL, NULL, '2023-07-18 03:16:38', '2023-07-18 03:16:38');
-
 -- --------------------------------------------------------
 
 --
@@ -282,15 +299,28 @@ CREATE TABLE `satinal` (
   `min_stok` int(11) NOT NULL,
   `birim_fiyat` int(11) NOT NULL,
   `updated_at` date NOT NULL,
-  `created_at` date NOT NULL
+  `created_at` date NOT NULL,
+  `alinacak_miktar` int(11) NOT NULL,
+  `odenecek_tutar` int(11) DEFAULT NULL,
+  `tarih` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
 -- Tablo döküm verisi `satinal`
 --
 
-INSERT INTO `satinal` (`id`, `urun_adi`, `urun_kodu`, `urun_tipi`, `maks_stok`, `depo_miktar`, `min_stok`, `birim_fiyat`, `updated_at`, `created_at`) VALUES
-(4, 'devrimser', 1, 'human', 50, 500000000, 25, 100, '2023-08-02', '2023-08-02');
+INSERT INTO `satinal` (`id`, `urun_adi`, `urun_kodu`, `urun_tipi`, `maks_stok`, `depo_miktar`, `min_stok`, `birim_fiyat`, `updated_at`, `created_at`, `alinacak_miktar`, `odenecek_tutar`, `tarih`) VALUES
+(114, 'deneme', 1, 'deneme', 750, 250, 150, 100, '2023-08-09', '2023-08-09', 2, 200, '2023-08-17'),
+(115, 'furkan', 31, 'deneme', 850, 150, 20, 150, '2023-08-09', '2023-08-09', 5, 750, '2023-08-29'),
+(116, 'deneme2', 2, 'debeme', 750, 160, 100, 200, '2023-08-09', '2023-08-09', 590, 118000, '2023-08-11'),
+(117, 'dsdsc', 85, 'hfgc', 455, 45, 45, 45, '2023-08-09', '2023-08-09', 410, 18450, '2023-08-24'),
+(118, 'asadasa', 8652, 'esdaz', 85, 54, 54, 54, '2023-08-09', '2023-08-09', 31, 1674, '2023-08-24'),
+(119, 'deuhjklsjk', 985623, 'djkemö d', 368545, 7475, 545, 500, '2023-08-09', '2023-08-09', 1, 500, '2023-08-09'),
+(120, 'devrimser', 31, 'deneme', 850, 50, 60, 75, '2023-08-09', '2023-08-09', 800, 60000, '2023-08-19'),
+(121, 'dzfsd', 7854, 'ujhgfdc', 5742, 454, 45, 454, '2023-08-09', '2023-08-09', 52, 23608, '2023-08-17'),
+(122, 'Eksik ürün1', 1321, 'Eşantiyon', 1111, 115, 11, 23, '2023-08-10', '2023-08-10', 900, 20700, '2023-08-23'),
+(123, 'Eksik ürün2', 21314, 'Eşantiyon', 11111111, 111, 1111, 50, '2023-08-10', '2023-08-10', 11111000, 555550000, '2023-08-23'),
+(124, 'Eksik ürün', 1234, 'Eşantiyon', 1567, 111, 213, 872, '2023-08-10', '2023-08-10', 1456, 1269632, '2023-08-29');
 
 -- --------------------------------------------------------
 
@@ -306,6 +336,15 @@ CREATE TABLE `tedarikciler` (
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
+
+--
+-- Tablo döküm verisi `tedarikciler`
+--
+
+INSERT INTO `tedarikciler` (`id`, `tedarikci_adsoyad`, `tedarikci_tipi`, `telefon`, `updated_at`, `created_at`) VALUES
+(40, 'asasas', 'Doğrudan Tedarik', '(524) 25_-____', '2023-08-09', '2023-08-09'),
+(41, 'asasasas', 'Doğrudan Tedarik', '(31_) ___-____', '2023-08-09', '2023-08-09'),
+(42, 'asasasa', 'Doğrudan Tedarik', '(313) 13_-____', '2023-08-09', '2023-08-09');
 
 -- --------------------------------------------------------
 
@@ -325,13 +364,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'furkan', 'furkan@gmail.com', NULL, '$2y$10$26YIja2fcJgp40ALeoHeqe5Cz/fIrbFxmuvRfw3QAoC5NvBkG7NPy', NULL, '2023-07-18 03:16:38', '2023-07-18 03:16:38');
-
---
 -- Dökümü yapılmış tablolar için indeksler
 --
 
@@ -339,6 +371,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 -- Tablo için indeksler `alinacakurunler`
 --
 ALTER TABLE `alinacakurunler`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `events`
+--
+ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -441,7 +479,13 @@ ALTER TABLE `users`
 -- Tablo için AUTO_INCREMENT değeri `alinacakurunler`
 --
 ALTER TABLE `alinacakurunler`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `failed_jobs`
@@ -453,13 +497,13 @@ ALTER TABLE `failed_jobs`
 -- Tablo için AUTO_INCREMENT değeri `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `musteriler`
 --
 ALTER TABLE `musteriler`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `oauth_clients`
@@ -477,25 +521,25 @@ ALTER TABLE `oauth_personal_access_clients`
 -- Tablo için AUTO_INCREMENT değeri `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `satinal`
 --
 ALTER TABLE `satinal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `tedarikciler`
 --
 ALTER TABLE `tedarikciler`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
