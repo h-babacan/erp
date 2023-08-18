@@ -21,6 +21,8 @@ class TedarikciController extends Controller
             'tedarikci_adsoyad' => 'required|string|max:100|unique:tedarikciler',
             'tedarikci_tipi' => 'required',
             'telefon' => 'required',
+            'tedarikci_e_posta' => 'required',
+            'tedarikci_adresi' => 'required',
         ],
 [
                 'tedarikci_adsoyad.required' => 'Lütfen Tedarikçi ismi giriniz.',
@@ -29,7 +31,8 @@ class TedarikciController extends Controller
                 'tedarikci_adsoyad.unique' => 'Bu Tedarikçi isminde birisi zaten ekli.',
                 'tedarikci_tipi.required' => 'Tedarikçi tipi seçmek zorundasınız.',
                 'telefon.required' => 'Lütfen telefon numaranızı giriniz.',
-
+                'tedarikci_e_posta.required' => 'Tedarikçi e-postasını yazmak zorundasınız.',
+                'tedarikci_adresi.required' => 'Tedarikçi adresi yazmak zorundasınız.',
             ]);
 
         $getir = Tedarikciler::where('telefon', $request->telefon)->first();
@@ -42,6 +45,8 @@ class TedarikciController extends Controller
             $yeni_tedarikci = new Tedarikciler();
             $yeni_tedarikci->tedarikci_adsoyad = $request->tedarikci_adsoyad;
             $yeni_tedarikci->telefon = $request->telefon;
+            $yeni_tedarikci->tedarikci_e_posta = $request->tedarikci_e_posta;
+            $yeni_tedarikci->tedarikci_adresi= $request->tedarikci_adresi;
             $yeni_tedarikci->tedarikci_tipi = $request->tedarikci_tipi;
             $sonuc = $yeni_tedarikci->save();
 
@@ -123,6 +128,8 @@ class TedarikciController extends Controller
 
         $tedarikci->tedarikci_adsoyad = $request->tedarikci_adsoyad;
         $tedarikci->telefon = $request->telefon;
+        $tedarikci->tedarikci_e_posta = $request->tedarikci_e_posta;
+        $tedarikci->tedarikci_adresi = $request->tedarikci_adresi;
         $tedarikci->tedarikci_tipi = $request->tedarikci_tipi;
 
 

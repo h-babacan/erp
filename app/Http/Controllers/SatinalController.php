@@ -30,7 +30,8 @@ class SatinalController extends Controller
             $yeni_urun->birim_fiyat = $request->birim_fiyat;
             $yeni_urun->alinacak_miktar = $request->alinacak_miktar;
             $yeni_urun->odenecek_tutar = $request->birim_fiyat * $request->alinacak_miktar;
-            $yeni_urun->tarih = $request->datepicker; // Eklenen kısım
+            $yeni_urun->satin_alinan_tarih = $request->satin_alinan_tarih; // Eklenen kısım
+            $yeni_urun->istenilen_teslim_tarihi = $request->istenilen_teslim_tarihi; // Eklenen kısım
             $sonuc = $yeni_urun->save();
 
 
@@ -39,8 +40,8 @@ class SatinalController extends Controller
             if ($sonuc) {
 
                 $yeni_events = new Event();
-                $yeni_events->start= $request->datepicker;
-                $yeni_events->end = $request->datepicker;
+                $yeni_events->start= $request->satin_alinan_tarih;
+                $yeni_events->end = $request->istenilen_teslim_tarihi;
                 $yeni_events->title = $request->urun_adi;
                 $yeni_events->save();
 

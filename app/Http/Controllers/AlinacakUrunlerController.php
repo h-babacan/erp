@@ -63,6 +63,7 @@ class AlinacakUrunlerController extends Controller
             $yeni_urun->urun_tipi = $request->urun_tipi;
             $yeni_urun->maks_stok = $request->maks_stok;
             $yeni_urun->depo_miktar = $request->depo_miktar;
+            $yeni_urun->birim = $request->birim;
             $yeni_urun->min_stok = $request->min_stok;
             $yeni_urun->birim_fiyat = $request->birim_fiyat;
             $yeni_urun->alinacak_miktar = $request->maks_stok - $request->depo_miktar;

@@ -70,8 +70,21 @@
                                         @enderror
                                     </div>
 
+                                        <div class="form-group">
+                                            <label for="tedarikci_e_posta">Tedarikçi E-posta Adresi</label>
+                                            <input type="text" name="tedarikci_e_posta" class="form-control @error('tedarikci_e_posta') is-invalid @enderror" id="tedarikci_e_posta" placeholder="E-posta giriniz" value="{{ old('tedarikci_e_posta') }}">
+                                            @error('tedarikci_e_posta')
+                                            <div class="invalid-feedback">{{$message}}</div>
+                                            @enderror
+                                        </div>
 
-
+                                        <div class="form-group">
+                                            <label for="tedarikci_adresi">Tedarikçi Adresi</label>
+                                            <input type="text" name="tedarikci_adresi" class="form-control @error('tedarikci_adresi') is-invalid @enderror" id="tedarikci_adresi" placeholder="Adresinizi giriniz" value="{{ old('tedarikci_adresi') }}">
+                                            @error('tedarikci_adresi')
+                                            <div class="invalid-feedback">{{$message}}</div>
+                                            @enderror
+                                        </div>
 
 
                                     <div class="form-group">
@@ -136,6 +149,8 @@
 
                                                                 <th>Tedarikçi Ad Soyad</th>
                                                                 <th>Tedarikçi Telefon Numarası</th>
+                                                                <th>Tedarkiçi E-posta Adresi</th>
+                                                                <th>Tedarkiçi Adresi</th>
                                                                 <th>Tedarikçi Tipi</th>
 
                                                             </tr>
@@ -233,6 +248,8 @@
 
                     { data: 'tedarikci_adsoyad', name: 'tedarikci_adsoyad'},
                     { data: 'telefon', name: 'telefon'},
+                    { data: 'tedarikci_e_posta', name: 'tedarikci_e_posta'},
+                    { data: 'tedarikci_adresi', name: 'tedarikci_adresi'},
                     { data: 'tedarikci_tipi', name: 'tedarikci_tipi'},
 
                 ]

@@ -52,6 +52,7 @@
                                         <th>Ürün Tipi</th>
                                         <th>Maks Stok</th>
                                         <th>Depodaki Miktar</th>
+                                        <th>Birim</th>
                                         <th>Min Stok</th>
                                         <th>Alınacak Miktar <br>(Önerilen)</th>
                                         <th>Birim Fiyat</th>

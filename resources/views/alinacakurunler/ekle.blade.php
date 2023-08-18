@@ -87,6 +87,17 @@
                                         @enderror
                                     </div>
 
+                                        <div class="form-group">
+                                            <label>Birim <span style="color: red;">(*)</span></label>
+                                            <select class="form-control" name="birim" id="birim" required>
+                                                <option selected value="0">KG</option>
+                                                <option value="1">Adet</option>
+                                                <option value="2">Litre</option>
+
+                                            </select>
+
+                                        </div>
+
                                     <div class="form-group">
                                         <label> Minimum Stok </label>
                                         <input type="number" class="form-control @error('min_stok') is-invalid @enderror" name="min_stok" id="min_stok" value="{{ old('min_stok') }}">

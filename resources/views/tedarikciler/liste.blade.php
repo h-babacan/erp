@@ -52,6 +52,8 @@
                                         <th style="width: 10px">#</th>
                                         <th>Tedarikçi Ad Soyad</th>
                                         <th>Tedarikçi Telefon Numarası</th>
+                                        <th>Tedarikçi E-posta Adresi</th>
+                                        <th>Tedarikçi Adresi</th>
                                         <th>Tedarikçi Tipi</th>
 
                                     </tr>
@@ -63,6 +65,8 @@
                                             <td>{{$i}}</td>
                                             <td>{{$tedarikci->tedarikci_adsoyad}}</td>
                                             <td>{{$tedarikci->telefon}}</td>
+                                            <td>{{$tedarikci->tedarikci_e_posta}}</td>
+                                            <td>{{$tedarikci->tedarikci_adresi}}</td>
                                             <td>
                                                 @if($musteri->tedarikci_tipi=='0')
                                                     Seçenek 1

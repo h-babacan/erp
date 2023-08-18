@@ -56,7 +56,9 @@
                                         <th>Birim Fiyatı</th>
                                         <th>Alınan Miktar</th>
                                         <th>Ödenecek Tutar</th>
-                                        <th>Alınacak Tarih</th>
+                                        <th>Satın alınan Tarih</th>
+                                        <th>İstenilen Teslim Tarih</th>
+
 
 
 
@@ -145,16 +147,28 @@
                     { data: 'alinacak_miktar', name: 'alinacak_miktar'},
                     { data: 'odenecek_tutar', name: 'odenecek_tutar'},
                     {
-                        data: 'tarih',    // Tarih alanının verilerini buradan alacak
-                        name: 'tarih',
+                        data: 'satin_alinan_tarih',    // Satın alınan tarih alanının verilerini buradan alacak
+                        name: 'satin_alinan_tarih',
                         render: function(data, type, row) {
-                            return moment(data).format('DD-MM-YYYY'); // moment.js ile tarihi biçimlendir
+                            return moment(data).format('DD-MM-YYYY'); // moment.js ile satın alınan tarihi biçimlendir
+                        }
+                    },
+                    {
+                        data: 'istenilen_teslim_tarihi',    // İstenilen teslim tarihi alanının verilerini buradan alacak
+                        name: 'istenilen_teslim_tarihi',
+                        render: function(data, type, row) {
+                            return moment(data).format('DD-MM-YYYY'); // moment.js ile istenilen teslim tarihini biçimlendir
                         }
                     }
+
                     // { data: 'butonlar', name: 'butonlar', orderable: false, searchable: false }
+
                 ]
 
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+
+
 
 
             $('#example2').DataTable({

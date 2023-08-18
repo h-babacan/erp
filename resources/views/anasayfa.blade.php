@@ -104,7 +104,6 @@
                                         Calendar
                                     </h3>
                                     <!-- tools card -->
-
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body pt-0">
@@ -113,12 +112,7 @@
                                 </div>
                                 <!-- /.card-body -->
                             </div>
-                        </div>
-                        <!-- /.card -->
-                    </div>
 
-                </div>
-            </div>
         </section>
         <!-- /.content -->
     </div>

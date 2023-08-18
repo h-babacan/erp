@@ -60,6 +60,16 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label> Tedarikçinin E-posta Adresi <span style="color: red;">(*)</span></label>
+                                        <input type="text" value="{{$tedarikci->tedarikci_e_posta}}" class="form-control" name="tedarikci_e_posta" id="tedarikci_e_posta" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label> Tedarikçinin Adresi <span style="color: red;">(*)</span></label>
+                                        <input type="text" value="{{$tedarikci->tedarikci_adresi}}" class="form-control" name="tedarikci_adresi" id="tedarikci_adresi" required>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label>Tedarikçi tipi <span style="color: red;">(*)</span></label>
                                         <select class="form-control" name="tedarikci_tipi" id="tedarikci_tipi" required>
                                             <option @if($tedarikci->tedarikci_tipi=='0') selected @endif value="Doğrudan Tedarik">Doğrudan Tedarik</option>

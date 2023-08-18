@@ -67,6 +67,11 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label>Birim</label>
+                                        <input type="number" value="{{$urun->birim}}" class="form-control" name="birim" id="birim"required>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label>Minimum Stok </label>
                                         <input type="number" value="{{$urun->min_stok}}" class="form-control" name="min_stok" id="min_stok" required>
                                     </div>
@@ -82,8 +87,13 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="datepicker">Tarih</label>
-                                        <input type="text" class="form-control" name="datepicker" id="datepicker">
+                                        <label for="datepicker">Satın Alınan Tarih</label>
+                                        <input type="text" class="form-control" name="satin_alinan_tarih" id="satin_alinan_tarih">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="datepicker">İstenilen Teslim Tarihi</label>
+                                        <input type="text" class="form-control" name="istenilen_teslim_tarihi" id="istenilen_teslim_tarihi">
                                     </div>
 
                                     <div class="form-group">
@@ -119,11 +129,15 @@
         </script>
         <script>
             $(function() {
-                // Tarih seçimi
-                $('#datepicker').datepicker({
-                     dateFormat: 'yy/mm/dd', // Tarih biçimi
+                // Satın alınan tarih seçimi
+                $('#satin_alinan_tarih, #istenilen_teslim_tarihi').datepicker({
+                     dateFormat: 'yy/mm/dd', // Satın alınan tarih biçimi
                      minDate: 0 // Bugünden önceki tarihleri devre dışı bırak
                  });
+
+
+
+
 
                 // Alınacak miktar ve birim fiyat değiştiğinde ödenecek tutarı hesapla
                 $('#alinacak_miktar, #birim_fiyat').on('input', function() {
