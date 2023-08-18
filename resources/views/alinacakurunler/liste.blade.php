@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+
+
 @endsection
 
 @section('content')
@@ -50,6 +53,7 @@
                                         <th>Ürün Adı</th>
                                         <th>Ürün Kodu</th>
                                         <th>Ürün Tipi</th>
+                                        <th>Ürün Tedarikçisi</th>
                                         <th>Maks Stok</th>
                                         <th>Depodaki Miktar</th>
                                         <th>Birim</th>
@@ -102,6 +106,17 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
+<script>
+    function formatBirimi(data) {
+        if (data == 0) {
+            return 'KG';
+        } else if(data == 1){
+            return 'Adet';
+        }
+        else {
+            return 'Litre'
+        }
+    }</script>
     <script>
         $(function () {
             $("#example1").DataTable({
@@ -133,8 +148,22 @@
                     { data: 'urun_adi', name: 'urun_adi'},
                     { data: 'urun_kodu', name: 'urun_kodu'},
                     { data: 'urun_tipi', name: 'urun_tipi'},
+                    { data: 'urun_tedarikcisi', name: 'urun_tedarikcisi'},
                     { data: 'maks_stok', name: 'maks_stok'},
                     { data: 'depo_miktar', name: 'depo_miktar'},
+                    { data: 'birim', name: 'birim',
+                        render: function(data, type, row) {
+                            // Kolonun sadece görüntülenirken formatını değiştiriyoruz
+                            if (type === 'display') {
+                                return formatBirimi(data);
+                            } else {
+                                return data;
+                            }
+                        }
+
+
+
+                    },
                     { data: 'min_stok', name: 'min_stok'},
                     { data: 'alinacak_miktar', name: 'alinacak_miktar'},
                     { data: 'birim_fiyat', name: 'birim_fiyat'},

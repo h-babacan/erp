@@ -57,6 +57,11 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label>Ürün Tedarikçisi</label>
+                                        <input type="text" value="{{$urun->urun_tedarikcisi}}" class="form-control" name="urun_tedarikcisi" id="urun_tedarikcisi" required>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label>Maksimum Stok</label>
                                         <input type="number" value="{{$urun->maks_stok}}" class="form-control" name="maks_stok" id="maks_stok" required>
                                     </div>

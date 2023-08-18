@@ -1,7 +1,8 @@
 @extends('layout.app')
 
 @section('css')
-
+    <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 @endsection
 
 @section('content')
@@ -70,6 +71,28 @@
                                         @enderror
                                     </div>
 
+                                        <div class="form-group">
+                                            <label>Ürün Tedarikçisi <span style="color: red;">(*)</span></label>
+
+
+
+                                                        <div class="form-group">
+                                                            <select name="urun_tedarikcisi" id="urun_tedarikcisi" class="select2" style="width: 100%;">
+
+                                                                <option value="">Tedarikçi Seçiniz</option>
+                                                                @foreach($tedarikci_ad as $id => $tedarikci_ad)
+                                                                    <option value=tedarikciler/{{ $id }}>{{ $tedarikci_ad }}</option>
+                                                                @endforeach
+
+                                                            </select>
+
+                                            @error('urun_tedarikcisi')
+                                            <div class="invalid-feedback">{{$message}}</div>
+                                            @enderror
+
+                                        </div>
+
+
                                     <div class="form-group">
                                         <label>Maksimum Stok <span style="color: red;">(*)</span></label>
                                         <input type="number" class="form-control @error('maks_stok') is-invalid @enderror"  name="maks_stok" id="maks_stok" value="{{ old('maks_stok') }}">
@@ -90,9 +113,9 @@
                                         <div class="form-group">
                                             <label>Birim <span style="color: red;">(*)</span></label>
                                             <select class="form-control" name="birim" id="birim" required>
-                                                <option selected value="0">KG</option>
-                                                <option value="1">Adet</option>
-                                                <option value="2">Litre</option>
+                                                <option value="0">KG</option>
+                                                <option  value="1">Adet</option>
+                                                <option  value="2">Litre</option>
 
                                             </select>
 
@@ -118,7 +141,7 @@
 
 
 
-                                </div>
+
                                 <!-- /.card-body -->
                                 <div class="card-footer">
                                     <button class="btn btn-primary" type="button" id="kaydetButton">Kaydet</button>
@@ -145,7 +168,7 @@
 
 @section('js')
 
-
+    <script src="../../plugins/select2/js/select2.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('/plugins/inputmask/jquery.inputmask.min.js')}}"></script>
     <script>
@@ -175,6 +198,10 @@
                     }
                 });
             });
+        });
+    </script>
+    <script>        $(function () {
+            $('.select2').select2()
         });
     </script>
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Alinacakurunler;
+use App\Models\Tedarikciler;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -10,7 +11,8 @@ class AlinacakUrunlerController extends Controller
 {
 
     public function ekle(){
-        return view('alinacakurunler.ekle');
+        $tedarikci_ad = Tedarikciler::pluck('tedarikci_adsoyad', 'id');
+        return view('alinacakurunler.ekle',compact('tedarikci_ad')) ;
     }
     public function ekleme(Request $request)
     {
@@ -19,6 +21,7 @@ class AlinacakUrunlerController extends Controller
             'urun_adi' => 'required|string|max:150|unique :alinacakurunler',
             'urun_kodu' => 'required|numeric|unique :alinacakurunler',
             'urun_tipi' => 'required',
+            'urun_tedarikcisi' => 'required|string|max:150',
             'maks_stok' => 'required|numeric',
             'depo_miktar' => 'required|numeric',
             'min_stok' => 'required|numeric',
@@ -36,6 +39,10 @@ class AlinacakUrunlerController extends Controller
     'urun_kodu.unique' => 'Bu ürün koduna sahip bir ürün zaten var.',
 
     'urun_tipi.required' => 'Ürün tipi seçilmek zorundadır.',
+
+    'urun_tedarikcisi.required' => 'Lütfen Ürün adı giriniz.',
+    'urun_tedarikcisi.string' => 'Lütfen sadece harflerden oluşan bir isim giriniz.',
+    'urun_tedarikcisi.max' => 'Tedrikçi ismi için maksimum 150 harf kullanabilirsiniz.',
 
     'maks_stok.required' => 'Maksimum stok değerini girmek zorundasınız.',
     'maks_stok.numeric' => 'Maksimum stok değeri yalnızca sayılardan oluşabilir.',
@@ -61,6 +68,7 @@ class AlinacakUrunlerController extends Controller
             $yeni_urun->urun_adi = $request->urun_adi;
             $yeni_urun->urun_kodu = $request->urun_kodu;
             $yeni_urun->urun_tipi = $request->urun_tipi;
+            $yeni_urun->urun_tedarikcisi = $request->urun_tedarikcisi;
             $yeni_urun->maks_stok = $request->maks_stok;
             $yeni_urun->depo_miktar = $request->depo_miktar;
             $yeni_urun->birim = $request->birim;
@@ -135,6 +143,7 @@ class AlinacakUrunlerController extends Controller
 //        $urun->urun_adi = $request->urun_adi;
 //        $urun->urun_kodu = $request->urun_kodu;
 //        $urun->urun_tipi = $request->urun_tipi;
+//        $urun->urun_tedarikcisi = $request->urun_tedarikcisi;
 //        $urun->maks_stok = $request->maks_stok;
 //        $urun->depo_miktar = $request->depo_miktar;
 //        $urun->min_stok = $request->min_stok;
