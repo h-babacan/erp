@@ -50,6 +50,7 @@
                                         <th>Ürün Adı</th>
                                         <th>Ürün Kodu</th>
                                         <th>Ürün Tipi</th>
+                                        <th>Ürün Tedarikçisi</th>
                                         <th>Maksimum Stok</th>
                                         <th>Depo Miktarı</th>
                                         <th>Minimum Stok</th>
@@ -140,6 +141,7 @@
                     { data: 'urun_adi', name: 'urun_adi'},
                     { data: 'urun_kodu', name: 'urun_kodu'},
                     { data: 'urun_tipi', name: 'urun_tipi'},
+                    { data: 'urun_tedarikcisi', name: 'urun_tedarikcisi'},
                     { data: 'maks_stok', name: 'maks_stok'},
                     { data: 'depo_miktar', name: 'depo_miktar'},
                     { data: 'min_stok', name: 'min_stok'},

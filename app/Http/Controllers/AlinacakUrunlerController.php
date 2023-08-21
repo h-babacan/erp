@@ -107,12 +107,15 @@ class AlinacakUrunlerController extends Controller
         $data = DataTables::of($tablo)
             ->addColumn('butonlar', function ($tablo) {
                 return
-                    '<a onclick=" satinal(\'' . url('alinacakurunler/duzenle', ['id' => $tablo->id]) . '\')"class="btn btn-sm btn-success">Satın Al</a>';
+                    '<a onclick=" satinal(\'' . url('alinacakurunler/satinal', ['id' => $tablo->id]) . '\')"class="btn btn-sm btn-success">Satın Al</a>' .
+                    '<a class="btn btn-sm btn-danger ml-1"  onclick=" sil(\'' . url('alinacakurunler/sil', ['id' => $tablo->id]) . '\')">Sil</a>';
             })
+
             ->rawColumns(['butonlar'])
             ->make(true);
         return $data;
     }
+
 
     public function duzenle($id = '0')
     {
@@ -193,7 +196,7 @@ class AlinacakUrunlerController extends Controller
 
     public function silme($id)
     {
-        $data = Musteriler::findOrFail($id)->delete();
+        $data = Alinacakurunler::findOrFail($id)->delete();
 
 
         if ($data) {

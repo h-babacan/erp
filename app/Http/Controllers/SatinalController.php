@@ -24,6 +24,7 @@ class SatinalController extends Controller
             $yeni_urun->urun_adi = $request->urun_adi;
             $yeni_urun->urun_kodu = $request->urun_kodu;
             $yeni_urun->urun_tipi = $request->urun_tipi;
+            $yeni_urun->urun_tedarikcisi = $request->urun_tedarikcisi;
             $yeni_urun->maks_stok = $request->maks_stok;
             $yeni_urun->depo_miktar = $request->depo_miktar;
             $yeni_urun->min_stok = $request->min_stok;

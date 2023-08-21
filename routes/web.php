@@ -48,8 +48,10 @@ Route::get('/alinacakurunler/ekle', [AlinacakUrunlerController::class,'ekle']);
 Route::post('/alinacakurunler/ekleme', [AlinacakUrunlerController::class,'ekleme']);
 Route::get('/alinacakurunler/liste', [AlinacakUrunlerController::class,'dataliste']);
 Route::post('alinacakurunler/listeyigetir',[AlinacakUrunlerController::class,'listeyigetir']);
-Route::get('/alinacakurunler/duzenle/{id}', [AlinacakUrunlerController::class,'duzenle']);
+Route::get('/alinacakurunler/satinal/{id}', [AlinacakUrunlerController::class,'duzenle']);
 Route::post('/alinacakurunler/guncelleme', [AlinacakUrunlerController::class,'guncelleme']);
+Route::get('/alinacakurunler/sil/{id}', [AlinacakUrunlerController::class,'silme']);
+
 
 Route::get('/alinacakurunler/satinal',[SatinalController::class,'ekle']);
 Route::post('/satinal/ekleme', [SatinalController::class,'ekleme']);

@@ -81,7 +81,7 @@
 
                                                                 <option value="">Tedarikçi Seçiniz</option>
                                                                 @foreach($tedarikci_ad as $id => $tedarikci_ad)
-                                                                    <option value=tedarikciler/{{ $id }}>{{ $tedarikci_ad }}</option>
+                                                                    <option value={{ $tedarikci_ad }}>{{ $tedarikci_ad }}</option>
                                                                 @endforeach
 
                                                             </select>
