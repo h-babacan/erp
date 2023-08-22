@@ -73,7 +73,19 @@
 
                                     <div class="form-group">
                                         <label>Birim</label>
-                                        <input type="number" value="{{$urun->birim}}" class="form-control" name="birim" id="birim"required>
+                                        @if($urun->birim=='0')
+                                            <input type="text" value="KG" class="form-control" name="birim" id="birim" readonly>
+                                        @endif
+
+                                        @if($urun->birim=='1')
+                                            <input type="text" value="ADET" class="form-control" name="birim" id="birim" readonly>
+                                        @endif
+
+                                        @if($urun->birim=='2')
+                                            <input type="text" value="Litre" class="form-control" name="birim" id="birim" readonly>
+                                        @endif
+
+
                                     </div>
 
                                     <div class="form-group">
