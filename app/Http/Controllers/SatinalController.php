@@ -33,6 +33,7 @@ class SatinalController extends Controller
             $yeni_urun->odenecek_tutar = $request->birim_fiyat * $request->alinacak_miktar;
             $yeni_urun->satin_alinan_tarih = $request->satin_alinan_tarih; // Eklenen kısım
             $yeni_urun->istenilen_teslim_tarihi = $request->istenilen_teslim_tarihi; // Eklenen kısım
+            $yeni_urun->notlar = $request->notlar;
             $sonuc = $yeni_urun->save();
 
 

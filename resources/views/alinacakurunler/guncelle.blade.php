@@ -105,6 +105,12 @@
                                         <label>Ödenecek Miktar </label>
                                         <input type="number" value="{{$urun->birim_fiyat * $urun->alinacak_miktar}}" name="odenecek_tutar" id="odenecek_tutar" class="form-control" readonly>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>Not <span style="color: red;">(*)</span></label>
+                                        <input type="text" value="{{$urun->notlar}}" class="form-control" name="notlar" id="notlar" required>
+                                    </div>
+
                                 </div>
                                 <div class="card-footer">
                                     <button class="btn btn-success" type="button" id="kaydetButton">Satın Al</button>

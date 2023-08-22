@@ -59,6 +59,7 @@
                                         <th>Ödenecek Tutar</th>
                                         <th>Satın alınan Tarih</th>
                                         <th>İstenilen Teslim Tarih</th>
+                                        <th>Not</th>
 
 
 
@@ -161,7 +162,9 @@
                         render: function(data, type, row) {
                             return moment(data).format('DD-MM-YYYY'); // moment.js ile istenilen teslim tarihini biçimlendir
                         }
-                    }
+                    },
+
+                    { data: 'notlar', name: 'notlar'}
 
                     // { data: 'butonlar', name: 'butonlar', orderable: false, searchable: false }
 

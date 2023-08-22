@@ -152,7 +152,7 @@ class AlinacakUrunlerController extends Controller
 //        $urun->min_stok = $request->min_stok;
 //        $urun->birim_fiyat = $request->birim_fiyat;
 //        $urun->alinacak_miktar = $request->maks_stok - $request->depo_miktar;
-//        $urun->odenecek_tutar = $request->alinacak_miktar - $request->birim_fiyat;
+//        $urun->odenecek_tutar = $request->alinacak_miktar - $request->alinacak_miktar;
 
 
         $sonuc = $urun->save();
